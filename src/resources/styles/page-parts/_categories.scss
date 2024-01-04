@@ -1,0 +1,15 @@
+section#categories {
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .heading {
+      h1 {
+        font-size: 4rem;
+        font-family: $focus-font;
+        text-align: center;
+      }
+    }
+  }
+  

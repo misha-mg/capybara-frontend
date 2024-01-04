@@ -28,10 +28,7 @@ ul {
 li{
   list-style: none;
 }
-span,
-.active {
-  color: $focus-color;
-}
+
 
 .container {
   max-width: 1300px;
@@ -41,11 +38,20 @@ span,
   box-sizing: border-box;
 }
 
+main {
+  min-height: 50vh
+}
+
 
 
 // PAGES / PAGE PARTS
 
-@import "../styles/components/header";
+@import "../styles/page-parts/header";
+@import "../styles/page-parts/footer";
+@import "../styles/page-parts/popular";
+@import "../styles/page-parts/hero";
+@import "../styles/page-parts/items";
+@import "../styles/page-parts/categories";
 
 // COMPONENTS / ELEMENTS
 

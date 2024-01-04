@@ -42,17 +42,16 @@ li {
   list-style: none;
 }
 
-span,
-.active {
-  color: var(--focus-color);
-}
-
 .container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0px 15px;
   width: 100%;
   box-sizing: border-box;
+}
+
+main {
+  min-height: 50vh;
 }
 
 section#header {
@@ -104,6 +103,93 @@ section#header .container .header__right {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+section#footer {
+  border-top: solid 1px var(--focus-color);
+}
+section#footer .container {
+  padding: 3rem 1.5rem;
+}
+section#footer .footer__info {
+  display: flex;
+  justify-content: space-between;
+}
+section#footer .footer__info .content {
+  display: flex;
+  width: 50%;
+  gap: 3em;
+  align-items: center;
+}
+section#footer .footer__info .content img {
+  width: 150px;
+}
+section#footer .footer__info .content .text {
+  width: 35%;
+}
+section#footer .footer__info .content .text h5 {
+  font-size: 1.3rem;
+  margin: 0 0 1rem;
+}
+section#footer .footer__info .content .text p {
+  font-size: 0.85rem;
+}
+section#footer .footer__info .media {
+  display: flex;
+  width: 100%;
+  gap: 1em;
+  align-items: end;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--focus-font);
+  height: 100%;
+}
+section#footer .footer__info .media:hover a > span {
+  color: var(--focus-color);
+}
+section#footer .footer__copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-family: var(--focus-font);
+  font-size: 1.3rem;
+}
+
+section#hero {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#hero .heading h1 {
+  font-size: 4rem;
+  font-family: var(--focus-font);
+  text-align: center;
+}
+
+section#items {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#items .heading h1 {
+  font-size: 4rem;
+  font-family: var(--focus-font);
+  text-align: center;
+}
+
+section#categories {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#categories .heading h1 {
+  font-size: 4rem;
+  font-family: var(--focus-font);
+  text-align: center;
 }
 
 .button {
