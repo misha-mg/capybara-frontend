@@ -1,13 +1,57 @@
-.header-title {
-  font-size: 28px;
-  font-weight: bold;
-}
-.header-nav-items {
-  font-size: 24px;
-  font-weight: bold;
-}
+section#header {
+  border-bottom: solid 1px $focus-color;
 
-.navbar-toggler { 
-  border-color: $text-color;
-  background-color: #ffffff4b;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    font-family: $focus-font;
+
+    .header__left {
+      display: flex;
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 3rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        li > a {
+          
+          font-size: 1rem; 
+          position: relative;
+
+          span {
+            position: absolute;
+            display: block;
+            bottom: -2px;
+            width: 0%;
+            height: 1px;
+            background-color: $text-color;
+            transition: all .2s;
+          }
+
+          &:hover span {
+            width: 100%;
+            background-color: $focus-color;
+          }
+        }
+      }
+    }
+
+    .header__right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
 }

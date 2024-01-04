@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @import "../styles/components/variables";
 
 body {
   margin: 0 auto;
-  background-color: $backgrount-color1;
+  background-color: $backgrount-color;
   color: $text-color;
   transition: color, background .2s;
+  font-family: $base-font;
 }
 p {
   margin: 0;
@@ -21,9 +25,20 @@ ol,
 ul {
   padding: 0;
 }
+li{
+  list-style: none;
+}
 span,
 .active {
   color: $focus-color;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
