@@ -1,23 +1,35 @@
 .button {
-  width: 101px;
-  height: 40px;
-  color: #fff;
+  padding: 0.85rem 1rem;
+  color: $text-color;
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
-  transition: 0.3s transform;
-  border: none;
-  background-color: $focus-color;
-  line-height: 18px;
+  font-weight: 600;
+  transition: 0.2s all;
+  border: solid 1px $text-color;
+  border-radius: 5px;
+  background-color: $text-color2;
   cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: 0;
+  box-shadow: 0 5px 0 $text-color;
+
+
 
   &:hover {
-    transform: translateY(-5px);
+    top: 2px;
+    box-shadow: 0 3px 0 $text-color;
   }
-  &-secondary {
-    background-color: #5c5c5c;
+  &:active {
+    top: 5px;
+    box-shadow: 0 1px 0 $text-color;
   }
-  a {
-    color: #fff;
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.7;
+    
   }
+
+  
 }

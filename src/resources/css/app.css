@@ -51,7 +51,7 @@ li {
 }
 
 main {
-  min-height: 50vh;
+  min-height: 75vh;
 }
 
 section#header {
@@ -193,24 +193,31 @@ section#categories .heading h1 {
 }
 
 .button {
-  width: 101px;
-  height: 40px;
-  color: #fff;
+  padding: 0.85rem 1rem;
+  color: var(--text-color);
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
-  transition: 0.3s transform;
-  border: none;
-  background-color: var(--focus-color);
-  line-height: 18px;
+  font-weight: 600;
+  transition: 0.2s all;
+  border: solid 1px var(--text-color);
+  border-radius: 5px;
+  background-color: var(--text-color2);
   cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: 0;
+  box-shadow: 0 5px 0 var(--text-color);
 }
 .button:hover {
-  transform: translateY(-5px);
+  top: 2px;
+  box-shadow: 0 3px 0 var(--text-color);
 }
-.button-secondary {
-  background-color: #5c5c5c;
+.button:active {
+  top: 5px;
+  box-shadow: 0 1px 0 var(--text-color);
 }
-.button a {
-  color: #fff;
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.7;
 }/*# sourceMappingURL=app.css.map */
