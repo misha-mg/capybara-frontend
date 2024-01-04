@@ -1,0 +1,38 @@
+@import "../styles/components/variables";
+
+body {
+  margin: 0 auto;
+  background-color: $backgrount-color1;
+  color: $text-color;
+  transition: color, background .2s;
+}
+p {
+  margin: 0;
+}
+a, nav-item > a {
+  text-decoration: none;
+  color: $text-color;
+  transition: all 0.2s;
+}
+a:hover {
+  color: $focus-color;
+}
+ol,
+ul {
+  padding: 0;
+}
+span,
+.active {
+  color: $focus-color;
+}
+
+
+
+// PAGES / PAGE PARTS
+
+@import "../styles/components/header";
+
+// COMPONENTS / ELEMENTS
+
+@import "../styles/components/button";
+
