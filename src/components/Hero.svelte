@@ -7,9 +7,6 @@
   <div class="container">
     <div class="heading">
       <h1>WILL BE БЛОК ГЕРОЙ</h1>
-      <Button text="кнопка +" />
-      <Button text="кнопка -" isDisabled={true} />
-      <Spinner />
     </div>
   </div>
 </section>

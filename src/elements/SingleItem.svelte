@@ -6,7 +6,7 @@
   export let img = [];
 </script>
 
-<div class="item-wrapper">
+<div class="item-wrapper" id="single-item">
   <div class="item">
     <div class="item__image">
       <img src="/item-image.jpg" alt="" />

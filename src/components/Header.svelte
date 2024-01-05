@@ -1,3 +1,8 @@
+<script>
+  import { page } from "$app/stores";
+  $: currentRoute = $page.url;
+</script>
+
 <section id="header">
   <div class="container">
     <div class="header__left">
@@ -7,9 +12,23 @@
         </a>
       </div>
       <ul class="menu">
-        <li><a href="/">Головна <span></span></a></li>
-        <li><a href="/items">Товари <span></span></a></li>
-        <li><a href="/categories">Категорії <span></span></a></li>
+        <li>
+          <a href="/" class:active={currentRoute.pathname == "/"}
+            >Головна <span></span></a
+          >
+        </li>
+        <li>
+          <a href="/items" class:active={currentRoute.pathname == "/items"}
+            >Товари <span></span></a
+          >
+        </li>
+        <li>
+          <a
+            href="/categories"
+            class:active={currentRoute.pathname == "/categories"}
+            >Категорії <span></span></a
+          >
+        </li>
       </ul>
     </div>
     <div class="header__right">

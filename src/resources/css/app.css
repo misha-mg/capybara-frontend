@@ -81,9 +81,10 @@ section#header .container .header__left .menu {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  font-weight: bold;
 }
 section#header .container .header__left .menu li > a {
-  font-size: 1rem;
+  font-size: 1.25rem;
   position: relative;
 }
 section#header .container .header__left .menu li > a span {
@@ -99,10 +100,19 @@ section#header .container .header__left .menu li > a:hover span {
   width: 100%;
   background-color: var(--focus-color);
 }
+section#header .container .header__left .menu li > a.active {
+  color: var(--focus-color);
+}
+section#header .container .header__left .menu li > a.active span {
+  width: 100%;
+  background-color: var(--focus-color);
+}
 section#header .container .header__right {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 section#footer {
@@ -162,6 +172,11 @@ section#popular {
 section#popular .content {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
+}
+section#popular .footer {
+  display: flex;
+  justify-content: center;
 }
 
 section#hero {
@@ -177,15 +192,23 @@ section#hero .heading h1 {
 }
 
 section#items {
-  height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3rem 0;
 }
 section#items .heading h1 {
   font-size: 4rem;
   font-family: var(--focus-font);
   text-align: center;
+  margin: 0 0 1.5rem;
+}
+section#items .content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 section#categories {
@@ -243,18 +266,22 @@ section#categories .heading h1 {
   }
 }
 .spinner {
-  margin: 40px;
-  height: 20px;
-  width: 100px;
+  margin: 40px auto;
+  width: 100%;
+  aspect-ratio: 5;
+  max-width: 300px;
   display: flex;
   gap: 2px;
 }
 .spinner .item {
-  width: 7px;
+  width: 9%;
   height: 100%;
   background-color: var(--text-color);
   opacity: 0;
   transition: all 0.2s;
+  border: solid 1px var(--text-color);
+  box-shadow: 3px 3px 0px var(--text-color);
+  border-radius: 3px;
   animation: movement 0.5s infinite alternate ease-in-out;
 }
 .spinner .item:nth-child(2) {
@@ -285,11 +312,10 @@ section#categories .heading h1 {
   animation-delay: 1s;
 }
 
-.item-wrapper {
+#single-item {
   width: 22%;
 }
-
-.item {
+#single-item .item {
   position: relative;
   top: 0;
   right: 0;
@@ -300,42 +326,42 @@ section#categories .heading h1 {
   box-shadow: 3px 3px 0px var(--text-color);
   transition: all 0.1s;
 }
-.item:hover {
+#single-item .item:hover {
   box-shadow: 3px 3px 5px var(--text-color);
 }
-.item .item__image {
+#single-item .item .item__image {
   width: 100%;
   aspect-ratio: 0.775;
   margin-bottom: 1rem;
 }
-.item .item__image img {
+#single-item .item .item__image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
 }
-.item .item__info {
+#single-item .item .item__info {
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
 }
-.item .item__info .name {
+#single-item .item .item__info .name {
   max-width: 70%;
 }
-.item .item__action {
+#single-item .item .item__action {
   display: flex;
   gap: 10px;
 }
-.item .item__action button {
+#single-item .item .item__action button {
   width: 100%;
 }
-.item .item__action .like {
+#single-item .item .item__action .like {
   width: -moz-min-content;
   width: min-content;
 }
-.item .item__action .like img {
+#single-item .item .item__action .like img {
   width: 15px;
   height: 15px;
 }/*# sourceMappingURL=app.css.map */

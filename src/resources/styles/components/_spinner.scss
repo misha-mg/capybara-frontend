@@ -5,7 +5,7 @@
 
     opacity: 1;
   }
-  
+
   100% {
     transform: scale(0.7, 2);
     background-color: $focus-color;
@@ -14,20 +14,22 @@
 }
 
 .spinner {
-  margin: 40px;
-  height: 20px;
-  width: 100px;
+  margin: 40px auto;
+  width: 100%;
+  aspect-ratio: 5;
+  max-width: 300px;
   display: flex;
   gap: 2px;
-  
 
   .item {
-    width: 7px;
+    width: 9%;
     height: 100%;
     background-color: $text-color;
     opacity: 0;
-    transition: all .2s;
-   
+    transition: all 0.2s;
+    border: solid 1px $text-color;
+    box-shadow: 3px 3px 0px $text-color;
+    border-radius: 3px;
 
     animation: movement 0.5s infinite alternate ease-in-out;
 

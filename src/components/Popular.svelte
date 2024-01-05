@@ -1,4 +1,5 @@
 <script>
+  import Button from "../elements/Button.svelte";
   import SingleItem from "../elements/SingleItem.svelte";
 
   const itemsArr = [
@@ -38,6 +39,9 @@
       {#each itemsArr as item}
         <SingleItem {...item} />
       {/each}
+    </div>
+    <div class="footer">
+      <Button text="Показати більше" href="/items" />
     </div>
   </div>
 </section>

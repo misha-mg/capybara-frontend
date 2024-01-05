@@ -4,5 +4,11 @@ section#popular {
     .content {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        
     }
 }

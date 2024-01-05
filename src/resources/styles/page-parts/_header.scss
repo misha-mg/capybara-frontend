@@ -24,10 +24,11 @@ section#header {
         display: flex;
         align-items: center;
         gap: 1.5rem;
+        font-weight: bold;
 
         li > a {
           
-          font-size: 1rem; 
+          font-size: 1.25rem; 
           position: relative;
 
           span {
@@ -44,6 +45,14 @@ section#header {
             width: 100%;
             background-color: $focus-color;
           }
+          &.active {
+            color: $focus-color;
+
+            & span {
+              width: 100%;
+              background-color: $focus-color;
+            }
+          }
         }
       }
     }
@@ -52,6 +61,8 @@ section#header {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+      font-size: 1.25rem; 
+      font-weight: bold;
     }
   }
 }
