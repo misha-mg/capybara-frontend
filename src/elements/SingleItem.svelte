@@ -3,9 +3,10 @@
   export let name = "";
   export let price = "";
   export let isHeart = true;
-  export let img = [];
+  export let img = "";
   export let id = "";
   import { productList } from "$lib/store.js";
+  import { fly } from "svelte/transition";
 
   export function updateObject(id) {
     productList.update((objects) => {
@@ -20,10 +21,10 @@
   }
 </script>
 
-<div class="item-wrapper" id="single-item">
+<div class="item-wrapper" id="single-item" transition:fly>
   <div class="item">
     <div class="item__image">
-      <img src="/item-image.jpg" alt="" />
+      <img src={img} alt="" />
     </div>
     <div class="item__info">
       <span class="name">{name}</span>

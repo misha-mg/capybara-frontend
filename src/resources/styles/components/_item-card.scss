@@ -112,6 +112,9 @@
   #single-item {
     width: 47%;
     .item {
+      item__image {
+        aspect-ratio: 0.875;
+      }
       .item__action {
         button {
           padding: 0.55rem 0.85rem;

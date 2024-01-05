@@ -48,7 +48,8 @@
         </a>
       </div>
       <div class="header__bag">
-        <a href="#" class:active={currentRoute.pathname == "/bag"}>КОШИК</a>
+        <a href="/cart" class:active={currentRoute.pathname == "/cart"}>КОШИК</a
+        >
       </div>
     </div>
   </div>

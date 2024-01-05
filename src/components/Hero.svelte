@@ -35,22 +35,22 @@
             <img src="/person-slider.png" alt="" />
           </div>
           <div class="swiper-slide">
-            <img src="/person-slider.png" alt="" />
+            <img src="/person-slider1.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/person-slider2.png" alt="" />
           </div>
           <div class="swiper-slide">
             <img src="/person-slider.png" alt="" />
           </div>
           <div class="swiper-slide">
-            <img src="/person-slider.png" alt="" />
+            <img src="/person-slider1.png" alt="" />
           </div>
           <div class="swiper-slide">
             <img src="/person-slider.png" alt="" />
           </div>
           <div class="swiper-slide">
-            <img src="/person-slider.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="/person-slider.png" alt="" />
+            <img src="/person-slider2.png" alt="" />
           </div>
         </div>
         <div class="swiper-button-next"></div>

@@ -4,74 +4,75 @@ section#footer {
   .container {
     padding: 3rem 1.5rem;
   }
-  .footer__info {
+
+  .content {
     display: flex;
-    justify-content: space-between;
-
-    .content {
-      display: flex;
-      width: 50%;
-      gap: 3em;
-      align-items: center;
-
-      img {
-        width: 150px;
-      }
-      .text {
-        width: 35%;
-        h5 {
-          font-size: 1.3rem;
-          margin: 0 0 1rem;
-        }
-        p {
-          font-size: 0.85rem;
-        }
-      }
-    }
-    .media {
-      display: flex;
-      width: 100%;
-      gap: 1em;
-      align-items: end;
-      justify-content: center;
-      flex-direction: column;
-      font-family: $focus-font;
-      height: 100%;
-
-      &:hover a > span {
-        color: $focus-color;
-      }
-    }
-  }
-  .footer__copy {
-    display: flex;
+    width: 100%;
+    gap: 3rem;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
-    font-family: $focus-font;
-    font-size: 1.3rem;
+
+    img {
+      width: 150px;
+    }
+    .text {
+      width: 35%;
+      h5 {
+        font-size: 1.3rem;
+        margin: 0 0 1rem;
+      }
+      p {
+        font-size: 0.85rem;
+        min-width: 200px;
+      }
+    }
   }
+  .media {
+    display: flex;
+    width: 100%;
+    gap: 1em;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    font-family: $focus-font;
+    height: 100%;
+    margin-left: auto;
+
+    &:hover a > span {
+      color: $focus-color;
+    }
+  }
+}
+.footer__copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-family: $focus-font;
+  font-size: 1.3rem;
 }
 
 @media (max-width: 720px) {
   section#footer {
-    .footer__info {
-      flex-direction: column;
-
-      .content {
-        width: 100%;
-        flex-direction: column-reverse;
-        margin-bottom: 1rem;
-
-        .text {
-          width: 90%;
-          text-align: center;
-        }
+    .content {
+      gap: 1rem;
+      flex-wrap: wrap;
+      img {
+        order: 1;
+        width: 30%;
       }
-
-      .media {
-        align-items: center;
+      .text {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
       }
+    }
+
+    .media {
+      align-items: center;
+      width: 60%;
+      order: 3;
+      font-size: 14px;
     }
   }
 }
