@@ -52,6 +52,7 @@ li {
 
 main {
   min-height: 75vh;
+  padding: 3rem 0;
 }
 
 section#header {
@@ -205,16 +206,51 @@ section#popular .footer {
   justify-content: center;
 }
 
-section#hero {
+section#hero .container {
+  border: solid 2px var(--text-color);
+  border-radius: 10px;
   height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+section#hero .container {
+  display: flex;
+  position: relative;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+section#hero .heading {
+  width: 30%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(54, 29, 23, 0.7137254902);
+}
 section#hero .heading h1 {
   font-size: 4rem;
   font-family: var(--focus-font);
+  color: var(--backgrount-color);
   text-align: center;
+}
+section#hero .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+}
+section#hero .content .swiper {
+  height: 100%;
+}
+section#hero .content .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 section#items {
@@ -251,6 +287,9 @@ section#categories .heading h1 {
 
 section#likes {
   padding: 50px 0;
+}
+section#likes .heading {
+  margin-bottom: 1.5rem;
 }
 section#likes .heading h1 {
   font-size: 4rem;
