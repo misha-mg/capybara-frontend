@@ -5,7 +5,7 @@
 <section id="categories">
   <div class="container">
     <div class="heading">
-      <h1>WILL BE КАТЕГОРІЇ</h1>
+      <h1>КОЛИСЬ БУДУТЬ КАТЕГОРІЇ</h1>
       <Spinner />
     </div>
   </div>

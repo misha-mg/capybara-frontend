@@ -78,8 +78,8 @@ section#header .container .header__left {
   display: flex;
 }
 section#header .container .header__left .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-right: 3rem;
 }
 section#header .container .header__left .logo img {
@@ -302,8 +302,8 @@ section#hero .content .swiper {
 section#hero .content .swiper-slide img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 920px) {
@@ -554,9 +554,6 @@ section#likes .content {
 }
 @media (min-width: 520px) {
   #single-item .item .item__action .like:hover span {
-    background: url(/heart-active.png);
-    background-size: contain;
-    background-repeat: no-repeat;
     opacity: 0.7;
   }
 }
