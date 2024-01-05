@@ -67,14 +67,14 @@
           background-repeat: no-repeat;
           transition: all 0.2s;
         }
-
-        &:hover span {
-          background: url(/heart-active.png);
-          background-size: contain;
-          background-repeat: no-repeat;
-          opacity: 0.7;
+        @media (min-width: 520px) {
+          &:hover span {
+            background: url(/heart-active.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+          }
         }
-
         &.active span {
           background: url(/heart-active.png);
           background-size: contain;

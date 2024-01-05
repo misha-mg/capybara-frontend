@@ -552,11 +552,13 @@ section#likes .content {
   background-repeat: no-repeat;
   transition: all 0.2s;
 }
-#single-item .item .item__action .like:hover span {
-  background: url(/heart-active.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.7;
+@media (min-width: 520px) {
+  #single-item .item .item__action .like:hover span {
+    background: url(/heart-active.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+  }
 }
 #single-item .item .item__action .like.active span {
   background: url(/heart-active.png);
