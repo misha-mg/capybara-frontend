@@ -5,13 +5,19 @@
 
   onMount(() => {
     var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      slidesPerView: 5,
+      spaceBetween: 15,
+      slidesPerView: 2,
       loop: true,
       speed: 2000,
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
+      },
+      breakpoints: {
+        920: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
       },
     });
   });

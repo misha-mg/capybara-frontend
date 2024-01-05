@@ -1,5 +1,6 @@
 #single-item {
   width: 23%;
+  min-width: 230px;
   .item {
     position: relative;
     top: 0;
@@ -36,6 +37,9 @@
 
       .name {
         max-width: 70%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
     }
 
@@ -45,7 +49,11 @@
       button {
         width: 100%;
       }
-
+      .bag {
+        span::before {
+          content: "ДО КОШИКА";
+        }
+      }
       .like {
         width: min-content;
 
@@ -71,6 +79,55 @@
           background: url(/heart-active.png);
           background-size: contain;
           background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  #single-item {
+    width: 31%;
+    min-width: 100px;
+    .item {
+      padding: 0.65rem;
+      .item__info {
+        flex-direction: column;
+        gap: 0.2rem;
+        .name {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  #single-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 520px) {
+  #single-item {
+    width: 47%;
+    .item {
+      .item__action {
+        button {
+          padding: 0.55rem 0.85rem;
+          font-size: 12px;
+        }
+        .like {
+          padding: 0.55rem 0.85rem;
+          span {
+            width: 18px;
+            height: 16px;
+          }
+        }
+        .bag {
+          span::before {
+            content: "КОШИК";
+          }
         }
       }
     }

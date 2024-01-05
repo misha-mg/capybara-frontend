@@ -19,10 +19,11 @@
   box-shadow: 0 5px 0 $text-color;
 
 
- 
-  &:hover {
-    top: 2px;
-    box-shadow: 0 3px 0 $text-color;
+  @media (min-width: 520px) {
+    &:hover {
+      top: 2px;
+      box-shadow: 0 3px 0 $text-color;
+    }
   }
   &:active {
     top: 5px;

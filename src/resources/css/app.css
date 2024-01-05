@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
@@ -19,11 +20,15 @@ body {
   font-family: var(--base-font);
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
-a, nav-item > a {
+a,
+nav-item > a {
   text-decoration: none;
   color: var(--text-color);
   transition: all 0.2s;
@@ -55,6 +60,11 @@ main {
   padding: 3rem 0;
 }
 
+@media (max-width: 720px) {
+  main {
+    padding: 1.5rem 0;
+  }
+}
 section#header {
   border-bottom: solid 1px var(--focus-color);
 }
@@ -139,6 +149,20 @@ section#header .container .header__right .header__likes a span {
   font-size: 10px;
 }
 
+@media (max-width: 920px) {
+  section#header .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  section#header .container .header__left {
+    flex-direction: column;
+    align-items: center;
+  }
+  section#header .container .header__left .logo {
+    margin: 0;
+  }
+}
 section#footer {
   border-top: solid 1px var(--focus-color);
 }
@@ -190,6 +214,23 @@ section#footer .footer__copy {
   font-size: 1.3rem;
 }
 
+@media (max-width: 720px) {
+  section#footer .footer__info {
+    flex-direction: column;
+  }
+  section#footer .footer__info .content {
+    width: 100%;
+    flex-direction: column-reverse;
+    margin-bottom: 1rem;
+  }
+  section#footer .footer__info .content .text {
+    width: 90%;
+    text-align: center;
+  }
+  section#footer .footer__info .media {
+    align-items: center;
+  }
+}
 section#popular {
   padding: 50px 0;
 }
@@ -199,6 +240,8 @@ section#popular .popular__heading {
 section#popular .content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 section#popular .footer {
@@ -206,6 +249,11 @@ section#popular .footer {
   justify-content: center;
 }
 
+@media (max-width: 920px) {
+  section#popular .content {
+    gap: 1rem;
+  }
+}
 section#hero .container {
   border: solid 2px var(--text-color);
   border-radius: 10px;
@@ -241,6 +289,7 @@ section#hero .content {
   width: 100%;
   height: 100%;
   position: absolute;
+  bottom: 0;
   border-radius: 10px;
 }
 section#hero .content .swiper {
@@ -253,11 +302,19 @@ section#hero .content .swiper-slide img {
      object-fit: contain;
 }
 
+@media (max-width: 920px) {
+  section#hero .container {
+    height: 20rem;
+    border-radius: 0;
+  }
+  section#hero .container .content {
+    border-radius: 0;
+  }
+}
 section#items {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
 }
 section#items .heading h1 {
   font-size: 4rem;
@@ -273,6 +330,15 @@ section#items .content {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 720px) {
+  section#items .heading h1 {
+    font-size: 3rem;
+  }
+  section#items .content {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}
 section#categories {
   height: 20rem;
   display: flex;
@@ -285,8 +351,10 @@ section#categories .heading h1 {
   text-align: center;
 }
 
-section#likes {
-  padding: 50px 0;
+@media (max-width: 720px) {
+  section#categories .heading h1 {
+    font-size: 3rem;
+  }
 }
 section#likes .heading {
   margin-bottom: 1.5rem;
@@ -295,14 +363,28 @@ section#likes .heading h1 {
   font-size: 4rem;
   font-family: var(--focus-font);
   text-align: center;
+  margin: 0;
 }
 section#likes .content {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
+@media (max-width: 720px) {
+  section#likes .heading h1 {
+    font-size: 3rem;
+  }
+  section#likes .content {
+    gap: 1rem;
+  }
+}
+@media (max-width: 520px) {
+  section#likes .heading h1 {
+    font-size: 2rem;
+  }
+}
 .button-wrapper {
   display: contents;
 }
@@ -324,9 +406,11 @@ section#likes .content {
   top: 0;
   box-shadow: 0 5px 0 var(--text-color);
 }
-.button:hover {
-  top: 2px;
-  box-shadow: 0 3px 0 var(--text-color);
+@media (min-width: 520px) {
+  .button:hover {
+    top: 2px;
+    box-shadow: 0 3px 0 var(--text-color);
+  }
 }
 .button:active {
   top: 5px;
@@ -398,6 +482,7 @@ section#likes .content {
 
 #single-item {
   width: 23%;
+  min-width: 230px;
 }
 #single-item .item {
   position: relative;
@@ -434,6 +519,9 @@ section#likes .content {
 }
 #single-item .item .item__info .name {
   max-width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 #single-item .item .item__action {
   display: flex;
@@ -441,6 +529,9 @@ section#likes .content {
 }
 #single-item .item .item__action button {
   width: 100%;
+}
+#single-item .item .item__action .bag span::before {
+  content: "ДО КОШИКА";
 }
 #single-item .item .item__action .like {
   width: -moz-min-content;
@@ -466,4 +557,45 @@ section#likes .content {
   background: url(/heart-active.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1050px) {
+  #single-item {
+    width: 31%;
+    min-width: 100px;
+  }
+  #single-item .item {
+    padding: 0.65rem;
+  }
+  #single-item .item .item__info {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  #single-item .item .item__info .name {
+    max-width: 100%;
+  }
+}
+@media (max-width: 720px) {
+  #single-item {
+    width: 48%;
+  }
+}
+@media (max-width: 520px) {
+  #single-item {
+    width: 47%;
+  }
+  #single-item .item .item__action button {
+    padding: 0.55rem 0.85rem;
+    font-size: 12px;
+  }
+  #single-item .item .item__action .like {
+    padding: 0.55rem 0.85rem;
+  }
+  #single-item .item .item__action .like span {
+    width: 18px;
+    height: 16px;
+  }
+  #single-item .item .item__action .bag span::before {
+    content: "КОШИК";
+  }
 }/*# sourceMappingURL=app.css.map */

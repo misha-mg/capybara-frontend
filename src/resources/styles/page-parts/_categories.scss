@@ -1,15 +1,24 @@
 section#categories {
-    height: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .heading {
+    h1 {
+      font-size: 4rem;
+      font-family: $focus-font;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  section#categories {
     .heading {
       h1 {
-        font-size: 4rem;
-        font-family: $focus-font;
-        text-align: center;
+        font-size: 3rem;
       }
     }
   }
-  
+}

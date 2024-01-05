@@ -1,23 +1,36 @@
 section#items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .heading {
+    h1 {
+      font-size: 4rem;
+      font-family: $focus-font;
+      text-align: center;
+      margin: 0 0 1.5rem;
+    }
+  }
+  .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 0;
-  
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  section#items {
     .heading {
       h1 {
-        font-size: 4rem;
-        font-family: $focus-font;
-        text-align: center;
-        margin: 0 0 1.5rem;
+        font-size: 3rem;
+        
       }
     }
     .content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-bottom: 2rem;
+    }
   }
-  }
-  
+}

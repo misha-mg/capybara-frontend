@@ -30,7 +30,7 @@
       <span class="price">{price} ₴</span>
     </div>
     <div class="item__action">
-      <Button text="до кошика" />
+      <Button customClass="bag" />
       <Button
         customClass="like {isHeart ? 'active' : ''}"
         customFunction={() => updateObject(id)}
