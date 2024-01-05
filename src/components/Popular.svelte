@@ -2,32 +2,7 @@
   import Button from "../elements/Button.svelte";
   import SingleItem from "../elements/SingleItem.svelte";
 
-  const itemsArr = [
-    {
-      name: "Woman 1",
-      price: "1991",
-      isHeart: false,
-      img: "",
-    },
-    {
-      name: "Woman 2",
-      price: "1991",
-      isHeart: false,
-      img: "",
-    },
-    {
-      name: "Woman 3",
-      price: "1991",
-      isHeart: false,
-      img: "",
-    },
-    {
-      name: "Woman 4",
-      price: "1991",
-      isHeart: false,
-      img: "",
-    },
-  ];
+  import { productList } from "$lib/store.js";
 </script>
 
 <section id="popular">
@@ -36,8 +11,10 @@
       <h2>Актуальні айтеми</h2>
     </div>
     <div class="content">
-      {#each itemsArr as item}
-        <SingleItem {...item} />
+      {#each $productList as item, i}
+        {#if i <= 3}
+          <SingleItem {...item} />
+        {/if}
       {/each}
     </div>
     <div class="footer">

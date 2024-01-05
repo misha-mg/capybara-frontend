@@ -19,7 +19,7 @@ body {
   font-family: var(--base-font);
 }
 
-p {
+p, h1, h2, h3 {
   margin: 0;
 }
 
@@ -114,6 +114,29 @@ section#header .container .header__right {
   font-size: 1.25rem;
   font-weight: bold;
 }
+section#header .container .header__right a.active {
+  color: var(--focus-color);
+}
+section#header .container .header__right .header__likes a {
+  position: relative;
+}
+section#header .container .header__right .header__likes a span {
+  color: var(--text-color) !important;
+  position: absolute;
+  bottom: 90%;
+  right: -10px;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--focus-color);
+  border-radius: 100%;
+  padding: 3px;
+  font-family: var(--base-font);
+  font-size: 10px;
+}
 
 section#footer {
   border-top: solid 1px var(--focus-color);
@@ -169,6 +192,9 @@ section#footer .footer__copy {
 section#popular {
   padding: 50px 0;
 }
+section#popular .popular__heading {
+  margin-bottom: 1.5rem;
+}
 section#popular .content {
   display: flex;
   justify-content: space-between;
@@ -221,6 +247,25 @@ section#categories .heading h1 {
   font-size: 4rem;
   font-family: var(--focus-font);
   text-align: center;
+}
+
+section#likes {
+  padding: 50px 0;
+}
+section#likes .heading h1 {
+  font-size: 4rem;
+  font-family: var(--focus-font);
+  text-align: center;
+}
+section#likes .content {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.button-wrapper {
+  display: contents;
 }
 
 .button {
@@ -313,13 +358,14 @@ section#categories .heading h1 {
 }
 
 #single-item {
-  width: 22%;
+  width: 23%;
 }
 #single-item .item {
   position: relative;
   top: 0;
   right: 0;
   padding: 1rem;
+  box-sizing: border-box;
   border: solid 1px var(--text-color);
   border-radius: 5px;
   width: 100%;
@@ -361,7 +407,24 @@ section#categories .heading h1 {
   width: -moz-min-content;
   width: min-content;
 }
-#single-item .item .item__action .like img {
-  width: 15px;
-  height: 15px;
+#single-item .item .item__action .like span {
+  display: block;
+  width: 20px;
+  height: 18px;
+  min-width: 20px;
+  background: url(/heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.2s;
+}
+#single-item .item .item__action .like:hover span {
+  background: url(/heart-active.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+#single-item .item .item__action .like.active span {
+  background: url(/heart-active.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=app.css.map */

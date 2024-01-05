@@ -1,6 +1,13 @@
 <script>
   import { page } from "$app/stores";
   $: currentRoute = $page.url;
+
+  import { productList } from "$lib/store.js";
+  let lickedLength = 0;
+  productList.subscribe((value) => {
+    lickedLength = 0;
+    value.forEach((item) => (item.isHeart ? (lickedLength += 1) : ""));
+  });
 </script>
 
 <section id="header">
@@ -32,8 +39,17 @@
       </ul>
     </div>
     <div class="header__right">
-      <div class="header__likes"><a href="#">ВПОДОБАЙКИ</a></div>
-      <div class="header__bag"><a href="#">КОШИК</a></div>
+      <div class="header__likes">
+        <a href="/likes" class:active={currentRoute.pathname == "/likes"}>
+          ВПОДОБАЙКИ
+          {#if lickedLength > 0}
+            <span>{lickedLength}</span>
+          {/if}
+        </a>
+      </div>
+      <div class="header__bag">
+        <a href="#" class:active={currentRoute.pathname == "/bag"}>КОШИК</a>
+      </div>
     </div>
   </div>
 </section>

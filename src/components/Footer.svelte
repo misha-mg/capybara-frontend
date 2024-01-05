@@ -4,7 +4,7 @@
       <div class="content">
         <img src="/capypara-logo.png" alt="" />
         <div class="text">
-          <h5>Заголовок</h5>
+          <h5>CAPYBARA</h5>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
             error nemo repellendus nam, sit quod quae minus veniam enim

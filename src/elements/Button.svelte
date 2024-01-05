@@ -7,7 +7,7 @@
   export let href = "#";
 </script>
 
-<a {href}>
+<a {href} class="button-wrapper">
   <button
     class="button {customClass}"
     on:click={customFunction}

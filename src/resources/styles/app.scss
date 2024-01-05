@@ -10,7 +10,7 @@ body {
   transition: color, background .2s;
   font-family: $base-font;
 }
-p {
+p, h1, h2, h3 {
   margin: 0;
 }
 a, nav-item > a {
@@ -52,6 +52,7 @@ main {
 @import "../styles/page-parts/hero";
 @import "../styles/page-parts/items";
 @import "../styles/page-parts/categories";
+@import "../styles/page-parts/likes";
 
 // COMPONENTS / ELEMENTS
 

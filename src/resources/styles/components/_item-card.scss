@@ -1,12 +1,11 @@
-
-
 #single-item {
-    width: 22%;
+  width: 23%;
   .item {
     position: relative;
     top: 0;
     right: 0;
     padding: 1rem;
+    box-sizing: border-box;
     border: solid 1px $text-color;
     border-radius: 5px;
     width: 100%;
@@ -50,9 +49,28 @@
       .like {
         width: min-content;
 
-        img {
-          width: 15px;
-          height: 15px;
+        span {
+          display: block;
+          width: 20px;
+          height: 18px;
+          min-width: 20px;
+          background: url(/heart.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: all 0.2s;
+        }
+
+        &:hover span {
+          background: url(/heart-active.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          opacity: 0.7;
+        }
+
+        &.active span {
+          background: url(/heart-active.png);
+          background-size: contain;
+          background-repeat: no-repeat;
         }
       }
     }

@@ -1,6 +1,9 @@
 section#popular {
     padding: 50px 0;
 
+    .popular__heading {
+        margin-bottom: 1.5rem;
+    }
     .content {
         display: flex;
         justify-content: space-between;
