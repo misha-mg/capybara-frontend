@@ -4,4 +4,4 @@
 </script>
 
 <Hero />
-<!-- <Popular /> -->
+<Popular />

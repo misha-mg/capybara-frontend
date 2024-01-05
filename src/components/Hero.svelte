@@ -1,5 +1,6 @@
 <script>
   import Button from "../elements/Button.svelte";
+  import Spinner from "../elements/Spinner.svelte";
 </script>
 
 <section id="hero">
@@ -8,6 +9,7 @@
       <h1>WILL BE БЛОК ГЕРОЙ</h1>
       <Button text="кнопка +" />
       <Button text="кнопка -" isDisabled={true} />
+      <Spinner />
     </div>
   </div>
 </section>
