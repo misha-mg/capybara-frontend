@@ -1,0 +1,39 @@
+section#cart {
+  .heading {
+    margin-bottom: 1.5rem;
+    h1 {
+      font-size: 4rem;
+      font-family: $focus-font;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  .content {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 720px) {
+  section#cart {
+    .heading {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    .content {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  section#cart {
+    .heading {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

@@ -128,10 +128,10 @@ section#header .container .header__right {
 section#header .container .header__right a.active {
   color: var(--focus-color);
 }
-section#header .container .header__right .header__likes a {
+section#header .container .header__right .header__likes a, section#header .container .header__right .header__bag a {
   position: relative;
 }
-section#header .container .header__right .header__likes a span {
+section#header .container .header__right .header__likes a span, section#header .container .header__right .header__bag a span {
   color: var(--text-color) !important;
   position: absolute;
   bottom: 90%;
@@ -390,6 +390,35 @@ section#likes .content {
     font-size: 2rem;
   }
 }
+section#cart .heading {
+  margin-bottom: 1.5rem;
+}
+section#cart .heading h1 {
+  font-size: 4rem;
+  font-family: var(--focus-font);
+  text-align: center;
+  margin: 0;
+}
+section#cart .content {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  section#cart .heading h1 {
+    font-size: 3rem;
+  }
+  section#cart .content {
+    gap: 1rem;
+  }
+}
+@media (max-width: 520px) {
+  section#cart .heading h1 {
+    font-size: 2rem;
+  }
+}
 .button-wrapper {
   display: contents;
 }
@@ -500,6 +529,14 @@ section#likes .content {
   width: 100%;
   box-shadow: 3px 3px 0px var(--text-color);
   transition: all 0.1s;
+  background: rgba(226, 191, 151, 0.3803921569);
+}
+#single-item .item.cart {
+  box-shadow: 3px 3px 0px var(--focus-color);
+  border: solid 1px var(--focus-color);
+}
+#single-item .item.cart:hover {
+  box-shadow: 3px 3px 5px var(--focus-color);
 }
 #single-item .item:hover {
   box-shadow: 3px 3px 5px var(--text-color);
@@ -537,6 +574,9 @@ section#likes .content {
 }
 #single-item .item .item__action .bag span::before {
   content: "ДО КОШИКА";
+}
+#single-item .item .item__action .bag.cart span::before {
+  content: "ПРИБРАТИ";
 }
 #single-item .item .item__action .like {
   width: -moz-min-content;

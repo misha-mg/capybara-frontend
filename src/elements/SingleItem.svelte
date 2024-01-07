@@ -5,14 +5,27 @@
   export let isHeart = true;
   export let img = "";
   export let id = "";
+  export let cart = "";
   import { productList } from "$lib/store.js";
   import { fly } from "svelte/transition";
 
-  export function updateObject(id) {
-    productList.update((objects) => {
-      const updatedObjects = objects.map((obj) => {
+  function heartStatus(id) {
+    productList.update((arr) => {
+      const updatedObjects = arr.map((obj) => {
         if (obj.id === id) {
           return { ...obj, isHeart: !obj.isHeart };
+        }
+        return obj;
+      });
+      return updatedObjects;
+    });
+  }
+
+  function toggleCart(id) {
+    productList.update((arr) => {
+      const updatedObjects = arr.map((obj) => {
+        if (obj.id === id) {
+          return { ...obj, cart: !obj.cart };
         }
         return obj;
       });
@@ -22,7 +35,7 @@
 </script>
 
 <div class="item-wrapper" id="single-item" transition:fly>
-  <div class="item">
+  <div class="item" class:cart>
     <div class="item__image">
       <img src={img} alt="" />
     </div>
@@ -31,12 +44,19 @@
       <span class="price">{price} ₴</span>
     </div>
     <div class="item__action">
-      <Button customClass="bag" />
+      <Button
+        customClass="bag {cart ? 'cart' : ''}"
+        customFunction={() => toggleCart(id)}
+      />
       <Button
         customClass="like {isHeart ? 'active' : ''}"
-        customFunction={() => updateObject(id)}
+        customFunction={() => heartStatus(id)}
       >
-        <span></span>
+        {#if cart}
+          ПРИБРАТИ
+        {:else}
+          <span></span>
+        {/if}
       </Button>
     </div>
   </div>

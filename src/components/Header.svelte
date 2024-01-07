@@ -1,12 +1,19 @@
 <script>
   import { page } from "$app/stores";
+  import { productList } from "$lib/store.js";
   $: currentRoute = $page.url;
 
-  import { productList } from "$lib/store.js";
-  let lickedLength = 0;
+  let counter = {
+    likes: 0,
+    cart: 0,
+  };
+
   productList.subscribe((value) => {
-    lickedLength = 0;
-    value.forEach((item) => (item.isHeart ? (lickedLength += 1) : ""));
+    counter = { likes: 0, cart: 0 };
+    value.forEach((item) => {
+      item.isHeart ? (counter.likes += 1) : null;
+      item.cart ? (counter.cart += 1) : null;
+    });
   });
 </script>
 
@@ -42,14 +49,18 @@
       <div class="header__likes">
         <a href="/likes" class:active={currentRoute.pathname == "/likes"}>
           ВПОДОБАЙКИ
-          {#if lickedLength > 0}
-            <span>{lickedLength}</span>
+          {#if counter.likes > 0}
+            <span>{counter.likes}</span>
           {/if}
         </a>
       </div>
       <div class="header__bag">
-        <a href="/cart" class:active={currentRoute.pathname == "/cart"}>КОШИК</a
-        >
+        <a href="/cart" class:active={currentRoute.pathname == "/cart"}>
+          КОШИК
+          {#if counter.cart > 0}
+            <span>{counter.cart}</span>
+          {/if}
+        </a>
       </div>
     </div>
   </div>

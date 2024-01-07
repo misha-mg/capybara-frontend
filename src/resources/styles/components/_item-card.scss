@@ -1,6 +1,7 @@
 #single-item {
   width: 23%;
   min-width: 230px;
+
   .item {
     position: relative;
     top: 0;
@@ -12,6 +13,16 @@
     width: 100%;
     box-shadow: 3px 3px 0px $text-color;
     transition: all 0.1s;
+    background: #e2bf9761;
+
+    &.cart {
+      box-shadow: 3px 3px 0px $focus-color;
+      border: solid 1px $focus-color;
+
+      &:hover {
+        box-shadow: 3px 3px 5px $focus-color;
+      }
+    }
 
     &:hover {
       box-shadow: 3px 3px 5px $text-color;
@@ -52,6 +63,12 @@
       .bag {
         span::before {
           content: "ДО КОШИКА";
+        }
+
+        &.cart {
+          span::before {
+            content: "ПРИБРАТИ";
+          }
         }
       }
       .like {

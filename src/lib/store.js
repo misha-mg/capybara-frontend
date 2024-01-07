@@ -7,6 +7,7 @@ export const productList = writable([
     price: "1990",
     isHeart: false,
     img: "person-slider.png",
+    cart: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const productList = writable([
     price: "1230",
     isHeart: false,
     img: "person-slider1.png",
+    cart: false,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const productList = writable([
     price: "1240",
     isHeart: false,
     img: "person-slider2.png",
+    cart: false,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const productList = writable([
     price: "2300",
     isHeart: false,
     img: "person-slider.png",
+    cart: false,
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ export const productList = writable([
     price: "1450",
     isHeart: false,
     img: "person-slider2.png",
+    cart: false,
   },
   {
     id: 6,
@@ -42,6 +47,7 @@ export const productList = writable([
     price: "450",
     isHeart: false,
     img: "person-slider1.png",
+    cart: false,
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ export const productList = writable([
     price: "980",
     isHeart: false,
     img: "person-slider.png",
+    cart: false,
   },
   {
     id: 8,
@@ -56,5 +63,6 @@ export const productList = writable([
     price: "230",
     isHeart: false,
     img: "person-slider2.png",
+    cart: false,
   },
 ]);
