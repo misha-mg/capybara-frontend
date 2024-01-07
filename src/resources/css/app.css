@@ -531,13 +531,6 @@ section#cart .content {
   transition: all 0.1s;
   background: rgba(226, 191, 151, 0.3803921569);
 }
-#single-item .item.cart {
-  box-shadow: 3px 3px 0px var(--focus-color);
-  border: solid 1px var(--focus-color);
-}
-#single-item .item.cart:hover {
-  box-shadow: 3px 3px 5px var(--focus-color);
-}
 #single-item .item:hover {
   box-shadow: 3px 3px 5px var(--text-color);
 }
@@ -576,6 +569,7 @@ section#cart .content {
   content: "ДО КОШИКА";
 }
 #single-item .item .item__action .bag.cart {
+  border: solid 1px var(--focus-color);
   box-shadow: 0 5px 0 var(--focus-color);
 }
 #single-item .item .item__action .bag.cart span::before {

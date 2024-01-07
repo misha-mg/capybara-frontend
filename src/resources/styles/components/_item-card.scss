@@ -16,12 +16,12 @@
     background: #e2bf9761;
 
     &.cart {
-      box-shadow: 3px 3px 0px $focus-color;
-      border: solid 1px $focus-color;
+      // box-shadow: 3px 3px 0px $focus-color;
+      // border: solid 1px $focus-color;
 
-      &:hover {
-        box-shadow: 3px 3px 5px $focus-color;
-      }
+      // &:hover {
+      //   box-shadow: 3px 3px 5px $focus-color;
+      // }
     }
 
     &:hover {
@@ -60,17 +60,17 @@
         width: 100%;
       }
       .bag {
-        
         span::before {
           content: "ДО КОШИКА";
         }
 
         &.cart {
+          border: solid 1px $focus-color;
           box-shadow: 0 5px 0 $focus-color;
+
           span::before {
             content: "ПРИБРАТИ";
           }
-
         }
       }
       .like {
