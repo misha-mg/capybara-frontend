@@ -127,10 +127,12 @@ section#header .container .header__right {
 section#header .container .header__right a.active {
   color: var(--focus-color);
 }
-section#header .container .header__right .header__likes a, section#header .container .header__right .header__bag a {
+section#header .container .header__right .header__likes a,
+section#header .container .header__right .header__bag a {
   position: relative;
 }
-section#header .container .header__right .header__likes a span, section#header .container .header__right .header__bag a span {
+section#header .container .header__right .header__likes a span,
+section#header .container .header__right .header__bag a span {
   color: var(--text-color) !important;
   position: absolute;
   bottom: 90%;
@@ -492,6 +494,7 @@ section#item-page .container .item-page__images .swiper-pagination .swiper-pagin
   border: solid 2px var(--text-color);
   border-radius: 100%;
   transition: background 0.2s;
+  cursor: pointer;
 }
 section#item-page .container .item-page__images .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: var(--focus-color);
@@ -501,7 +504,7 @@ section#item-page .container .item-page__info {
 }
 section#item-page .container .item-page__info h4 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   font-weight: 600;
 }
 section#item-page .container .item-page__info .item-page__price {
@@ -623,6 +626,86 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+@media (max-width: 920px) {
+  section#item-page .container {
+    gap: 1rem;
+  }
+  section#item-page .container .item-page__images {
+    width: 40%;
+  }
+  section#item-page .container .item-page__info {
+    width: 45%;
+  }
+}
+@media (max-width: 720px) {
+  section#item-page .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  section#item-page .container .item-page__images {
+    width: 70%;
+    margin: 0 auto;
+  }
+  section#item-page .container .item-page__images .swiper-wrapper {
+    width: calc(100% - 4rem);
+  }
+  section#item-page .container .item-page__images img {
+    height: auto;
+    aspect-ratio: 0.7;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section#item-page .container .item-page__images .swiper-button-next,
+  section#item-page .container .item-page__images .swiper-button-prev {
+    width: 2rem;
+    height: 2rem;
+  }
+  section#item-page .container .item-page__info {
+    width: 100%;
+  }
+  section#item-page .container .item-page__info .item-page__action .bag {
+    width: 100%;
+  }
+  section#item-page .container .item-page__info .item-page__action .like {
+    width: -moz-min-content;
+    width: min-content;
+  }
+  section#item-page .container .item-page__info .item-page__action .like span {
+    display: block;
+    width: 20px;
+    height: 18px;
+    min-width: 20px;
+    background: url(/heart.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+}
+@media (max-width: 720px) and (min-width: 520px) {
+  section#item-page .container .item-page__info .item-page__action .like:hover span {
+    opacity: 0.7;
+  }
+}
+@media (max-width: 720px) {
+  section#item-page .container .item-page__info .item-page__action .like.active {
+    box-shadow: 0 5px 0 var(--focus-color);
+    border: solid 1px var(--focus-color);
+  }
+  section#item-page .container .item-page__info .item-page__action .like.active:hover {
+    box-shadow: 0 3px 0 var(--focus-color);
+  }
+  section#item-page .container .item-page__info .item-page__action .like.active:active {
+    box-shadow: 0 1px 0 var(--focus-color);
+  }
+  section#item-page .container .item-page__info .item-page__action .like.active span {
+    background: url(/heart-active.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  section#item-page .container .item-page__info .item-page__facts {
+    width: 100%;
+  }
 }
 .button-wrapper {
   display: contents;

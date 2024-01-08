@@ -73,7 +73,8 @@ section#header {
         }
       }
 
-      .header__likes, .header__bag {
+      .header__likes,
+      .header__bag {
         a {
           position: relative;
           span {
@@ -112,9 +113,6 @@ section#header {
         .logo {
           margin: 0;
         }
-      }
-
-      .header__right {
       }
     }
   }

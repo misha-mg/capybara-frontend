@@ -2,7 +2,7 @@
 section#item-page {
   .container {
     display: flex;
-    
+
     gap: 3rem;
 
     .item-page__images {
@@ -12,9 +12,9 @@ section#item-page {
       height: min-content;
       margin: auto 4rem;
 
-    .swiper-wrapper {
-        width: calc(100% - 5rem)
-    }
+      .swiper-wrapper {
+        width: calc(100% - 5rem);
+      }
 
       img {
         width: 100%;
@@ -38,10 +38,10 @@ section#item-page {
         top: 50%;
         transform: translateY(-50%);
         left: -3rem;
-        transition: all .2s;
+        transition: all 0.2s;
 
         &:hover {
-           background: #e78989; 
+          background: #e78989;
         }
 
         img {
@@ -54,11 +54,11 @@ section#item-page {
         left: unset;
         right: -3rem;
         img {
-            transform: rotate(-180deg);
+          transform: rotate(-180deg);
         }
       }
 
-      .swiper-pagination{
+      .swiper-pagination {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -66,17 +66,18 @@ section#item-page {
         gap: 1rem;
         padding: 1rem 0;
 
-        .swiper-pagination-bullet{
-            display: block;
-            width: 10px;
-            height: 10px;
-            border: solid 2px $text-color;
-            border-radius: 100%;
-            transition: background .2s;
+        .swiper-pagination-bullet {
+          display: block;
+          width: 10px;
+          height: 10px;
+          border: solid 2px $text-color;
+          border-radius: 100%;
+          transition: background 0.2s;
+          cursor: pointer;
 
-            &.swiper-pagination-bullet-active {
-                background: $focus-color;
-            }
+          &.swiper-pagination-bullet-active {
+            background: $focus-color;
+          }
         }
       }
     }
@@ -86,7 +87,7 @@ section#item-page {
 
       h4 {
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin: 0 0 1rem;
         font-weight: 600;
       }
 
@@ -172,6 +173,64 @@ section#item-page {
           }
           p {
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  section#item-page {
+    .container {
+      gap: 1rem;
+      .item-page__images {
+        width: 40%;
+      }
+      .item-page__info {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  section#item-page {
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+
+      .item-page__images {
+        width: 70%;
+        margin: 0 auto;
+
+        .swiper-wrapper {
+          width: calc(100% - 4rem);
+        }
+
+        img {
+          height: auto;
+          aspect-ratio: 0.7;
+          object-fit: contain;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      .item-page__info {
+        width: 100%;
+
+        .item-page__action {
+          .bag {
+            width: 100%;
+          }
+          .like {
+            @include like-button;
+          }
+        }
+        .item-page__facts {
+          width: 100%;
         }
       }
     }
