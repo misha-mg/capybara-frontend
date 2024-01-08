@@ -1,24 +1,26 @@
 <script>
-  import Button from "../../../elements/Button.svelte";
-  import { toggleCart, toggleHeart } from "$lib/utils";
   import { productList } from "$lib/store.js";
+  import { toggleCart, toggleHeart } from "$lib/utils";
   import Popular from "../../../components/Popular.svelte";
-  export let name = "";
-  export let price = "";
-  export let isHeart = false;
-  export let img = "";
-  export let id = "";
-  export let cart = false;
+  import Button from "../../../elements/Button.svelte";
+  import { page } from "$app/stores";
+
+  let id = $page.params.item;
+
+  let item = {};
+  $: {
+    item = $productList.filter((item) => item.id == id)[0];
+  }
 </script>
 
 <section id="item-page">
   <div class="container">
     <div class="item-page__images">
-      <img src="/person-slider.png" alt="" />
+      <img src={item?.img} alt="img" />
     </div>
     <div class="item-page__info">
-      <h4>Светер "SHARK"</h4>
-      <span class="item-page__price">1250 ₴</span>
+      <h4>{item?.name}</h4>
+      <span class="item-page__price">{item?.price} ₴</span>
       <div class="item-page__size">
         <p>Оберіть розмір</p>
         <div>
@@ -38,14 +40,14 @@
       </div>
       <div class="item-page__action">
         <Button
-          customClass="bag {cart ? 'cart' : ''}"
-          customFunction={() => toggleCart(id, productList)}
+          customClass="bag {item?.cart ? 'cart' : ''}"
+          customFunction={() => toggleCart(item?.id, productList)}
         />
         <Button
-          customClass="like {isHeart ? 'active' : ''}"
-          customFunction={() => toggleHeart(id, productList)}
+          customClass="like {item?.isHeart ? 'active' : ''}"
+          customFunction={() => toggleHeart(item?.id, productList)}
         >
-          {#if cart}
+          {#if item?.cart}
             ПРИБРАТИ
           {:else}
             <span></span>

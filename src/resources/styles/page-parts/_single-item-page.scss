@@ -86,6 +86,10 @@ section#item-page {
 
         .bag {
           @include cart-button;
+          
+            min-width: 13rem;
+        
+          
         }
         .like {
           @include like-button;

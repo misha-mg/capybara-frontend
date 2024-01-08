@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 export const productList = writable([
   {
     id: 1,
-    name: "Светер Синій",
+    name: "Светер SHARK",
     price: "1990",
     isHeart: false,
     img: "/person-slider.png",
@@ -11,7 +11,7 @@ export const productList = writable([
   },
   {
     id: 2,
-    name: "Кофта червона",
+    name: "Штани BAGGY",
     price: "1230",
     isHeart: false,
     img: "/person-slider1.png",
@@ -19,7 +19,7 @@ export const productList = writable([
   },
   {
     id: 3,
-    name: "Футблка Рожева",
+    name: "Кофта Knitted",
     price: "1240",
     isHeart: false,
     img: "/person-slider2.png",
@@ -27,7 +27,7 @@ export const productList = writable([
   },
   {
     id: 4,
-    name: "Штани Вельветові",
+    name: "Светер SHARK2",
     price: "2300",
     isHeart: false,
     img: "/person-slider.png",
@@ -35,7 +35,7 @@ export const productList = writable([
   },
   {
     id: 5,
-    name: "Кофта Зелена",
+    name: "Кофта Knitted2",
     price: "1450",
     isHeart: false,
     img: "/person-slider2.png",
@@ -43,7 +43,7 @@ export const productList = writable([
   },
   {
     id: 6,
-    name: "Майка Алкашка",
+    name: "Майка Shorty",
     price: "450",
     isHeart: false,
     img: "/person-slider1.png",
@@ -51,7 +51,7 @@ export const productList = writable([
   },
   {
     id: 7,
-    name: "Шорти Стильні",
+    name: "Светер SHARK2",
     price: "980",
     isHeart: false,
     img: "/person-slider.png",
@@ -59,7 +59,7 @@ export const productList = writable([
   },
   {
     id: 8,
-    name: "Шарф крутий",
+    name: "Светере Cola",
     price: "230",
     isHeart: false,
     img: "/person-slider2.png",

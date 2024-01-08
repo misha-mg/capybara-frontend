@@ -499,6 +499,9 @@ section#item-page .container .item-page__info .item-page__action {
   display: flex;
   gap: 1rem;
 }
+section#item-page .container .item-page__info .item-page__action .bag {
+  min-width: 13rem;
+}
 section#item-page .container .item-page__info .item-page__action .bag span::before {
   content: "ДО КОШИКА";
 }
@@ -508,6 +511,12 @@ section#item-page .container .item-page__info .item-page__action .bag.cart {
 }
 section#item-page .container .item-page__info .item-page__action .bag.cart span::before {
   content: "ПРИБРАТИ";
+}
+section#item-page .container .item-page__info .item-page__action .bag.cart:hover {
+  box-shadow: 0 3px 0 var(--focus-color);
+}
+section#item-page .container .item-page__info .item-page__action .bag.cart:active {
+  box-shadow: 0 1px 0 var(--focus-color);
 }
 section#item-page .container .item-page__info .item-page__action .like {
   width: -moz-min-content;
@@ -533,7 +542,10 @@ section#item-page .container .item-page__info .item-page__action .like.active {
   border: solid 1px var(--focus-color);
 }
 section#item-page .container .item-page__info .item-page__action .like.active:hover {
-  box-shadow: 0 5px 0 var(--focus-color);
+  box-shadow: 0 3px 0 var(--focus-color);
+}
+section#item-page .container .item-page__info .item-page__action .like.active:active {
+  box-shadow: 0 1px 0 var(--focus-color);
 }
 section#item-page .container .item-page__info .item-page__action .like.active span {
   background: url(/heart-active.png);
@@ -701,6 +713,12 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
 #single-item .item .item__action .bag.cart span::before {
   content: "ПРИБРАТИ";
 }
+#single-item .item .item__action .bag.cart:hover {
+  box-shadow: 0 3px 0 var(--focus-color);
+}
+#single-item .item .item__action .bag.cart:active {
+  box-shadow: 0 1px 0 var(--focus-color);
+}
 #single-item .item .item__action .like {
   width: -moz-min-content;
   width: min-content;
@@ -725,7 +743,10 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
   border: solid 1px var(--focus-color);
 }
 #single-item .item .item__action .like.active:hover {
-  box-shadow: 0 5px 0 var(--focus-color);
+  box-shadow: 0 3px 0 var(--focus-color);
+}
+#single-item .item .item__action .like.active:active {
+  box-shadow: 0 1px 0 var(--focus-color);
 }
 #single-item .item .item__action .like.active span {
   background: url(/heart-active.png);

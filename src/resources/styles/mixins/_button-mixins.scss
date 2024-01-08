@@ -11,6 +11,12 @@
       span::before {
         content: "ПРИБРАТИ";
       }
+      &:hover {
+        box-shadow: 0 3px 0 $focus-color;
+      }
+      &:active {
+        box-shadow: 0 1px 0 $focus-color;
+      }
     }
   
 }
@@ -39,7 +45,10 @@
       border: solid 1px $focus-color;
 
       &:hover {
-        box-shadow: 0 5px 0 $focus-color;
+        box-shadow: 0 3px 0 $focus-color;
+      }
+      &:active {
+        box-shadow: 0 1px 0 $focus-color;
       }
       span {
         background: url(/heart-active.png);
