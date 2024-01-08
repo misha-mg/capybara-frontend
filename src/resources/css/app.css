@@ -34,10 +34,6 @@ nav-item > a {
   transition: all 0.2s;
 }
 
-a:hover {
-  color: var(--focus-color);
-}
-
 ol,
 ul {
   padding: 0;
@@ -73,6 +69,9 @@ section#header .container {
   justify-content: space-between;
   padding: 0.85rem 1.5rem;
   font-family: var(--focus-font);
+}
+section#header .container a:hover {
+  color: var(--focus-color);
 }
 section#header .container .header__left {
   display: flex;
@@ -335,6 +334,9 @@ section#items .content {
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
+section#items .content a {
+  display: contents;
+}
 
 @media (max-width: 720px) {
   section#items .heading h1 {
@@ -418,6 +420,130 @@ section#cart .content {
   section#cart .heading h1 {
     font-size: 2rem;
   }
+}
+section#item-page .container {
+  display: flex;
+  justify-content: space-between;
+}
+section#item-page .container .item-page__images {
+  width: 35%;
+  border-radius: 3px solid var(--focus-color);
+}
+section#item-page .container .item-page__images img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#item-page .container .item-page__info {
+  width: 55%;
+}
+section#item-page .container .item-page__info h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+section#item-page .container .item-page__info .item-page__price {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+section#item-page .container .item-page__info .item-page__color {
+  margin-bottom: 1.5rem;
+}
+section#item-page .container .item-page__info .item-page__color p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+section#item-page .container .item-page__info .item-page__color div {
+  display: flex;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+section#item-page .container .item-page__info .item-page__color div span {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--focus-color);
+  border-radius: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+section#item-page .container .item-page__info .item-page__color div span.active {
+  border: solid 2px var(--text-color);
+}
+section#item-page .container .item-page__info .item-page__color div span:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 2px inset, var(--text-color) 0px 0px 0px 1px;
+}
+section#item-page .container .item-page__info .item-page__size {
+  margin-bottom: 1.5rem;
+}
+section#item-page .container .item-page__info .item-page__size p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+section#item-page .container .item-page__info .item-page__size > p {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+section#item-page .container .item-page__info .item-page__size > div {
+  display: flex;
+  gap: 0.5rem;
+}
+section#item-page .container .item-page__info .item-page__size > div button {
+  padding: 0.7rem;
+}
+section#item-page .container .item-page__info .item-page__action {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+section#item-page .container .item-page__info .item-page__action .bag span::before {
+  content: "ДО КОШИКА";
+}
+section#item-page .container .item-page__info .item-page__action .bag.cart {
+  border: solid 1px var(--focus-color);
+  box-shadow: 0 5px 0 var(--focus-color);
+}
+section#item-page .container .item-page__info .item-page__action .bag.cart span::before {
+  content: "ПРИБРАТИ";
+}
+section#item-page .container .item-page__info .item-page__action .like {
+  width: -moz-min-content;
+  width: min-content;
+}
+section#item-page .container .item-page__info .item-page__action .like span {
+  display: block;
+  width: 20px;
+  height: 18px;
+  min-width: 20px;
+  background: url(/heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.2s;
+}
+@media (min-width: 520px) {
+  section#item-page .container .item-page__info .item-page__action .like:hover span {
+    opacity: 0.7;
+  }
+}
+section#item-page .container .item-page__info .item-page__action .like.active {
+  box-shadow: 0 5px 0 var(--focus-color);
+  border: solid 1px var(--focus-color);
+}
+section#item-page .container .item-page__info .item-page__action .like.active:hover {
+  box-shadow: 0 5px 0 var(--focus-color);
+}
+section#item-page .container .item-page__info .item-page__action .like.active span {
+  background: url(/heart-active.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+section#item-page .container .item-page__info .item-page__facts > div h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 .button-wrapper {
   display: contents;

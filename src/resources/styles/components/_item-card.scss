@@ -1,3 +1,6 @@
+@import '../mixins/button-mixins';
+
+
 #single-item {
   width: 23%;
   min-width: 230px;
@@ -60,50 +63,10 @@
         width: 100%;
       }
       .bag {
-        span::before {
-          content: "ДО КОШИКА";
-        }
-
-        &.cart {
-          border: solid 1px $focus-color;
-          box-shadow: 0 5px 0 $focus-color;
-
-          span::before {
-            content: "ПРИБРАТИ";
-          }
-        }
+        @include cart-button;
       }
       .like {
-        width: min-content;
-
-        span {
-          display: block;
-          width: 20px;
-          height: 18px;
-          min-width: 20px;
-          background: url(/heart.png);
-          background-size: contain;
-          background-repeat: no-repeat;
-          transition: all 0.2s;
-        }
-        @media (min-width: 520px) {
-          &:hover span {
-            opacity: 0.7;
-          }
-        }
-        &.active {
-          box-shadow: 0 5px 0 $focus-color;
-          border: solid 1px $focus-color;
-
-          &:hover {
-            box-shadow: 0 5px 0 $focus-color;
-          }
-          span {
-            background: url(/heart-active.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-        }
+        @include like-button;
       }
     }
   }

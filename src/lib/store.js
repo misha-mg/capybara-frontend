@@ -6,7 +6,7 @@ export const productList = writable([
     name: "Светер Синій",
     price: "1990",
     isHeart: false,
-    img: "person-slider.png",
+    img: "/person-slider.png",
     cart: false,
   },
   {
@@ -14,7 +14,7 @@ export const productList = writable([
     name: "Кофта червона",
     price: "1230",
     isHeart: false,
-    img: "person-slider1.png",
+    img: "/person-slider1.png",
     cart: false,
   },
   {
@@ -22,7 +22,7 @@ export const productList = writable([
     name: "Футблка Рожева",
     price: "1240",
     isHeart: false,
-    img: "person-slider2.png",
+    img: "/person-slider2.png",
     cart: false,
   },
   {
@@ -30,7 +30,7 @@ export const productList = writable([
     name: "Штани Вельветові",
     price: "2300",
     isHeart: false,
-    img: "person-slider.png",
+    img: "/person-slider.png",
     cart: false,
   },
   {
@@ -38,7 +38,7 @@ export const productList = writable([
     name: "Кофта Зелена",
     price: "1450",
     isHeart: false,
-    img: "person-slider2.png",
+    img: "/person-slider2.png",
     cart: false,
   },
   {
@@ -46,7 +46,7 @@ export const productList = writable([
     name: "Майка Алкашка",
     price: "450",
     isHeart: false,
-    img: "person-slider1.png",
+    img: "/person-slider1.png",
     cart: false,
   },
   {
@@ -54,7 +54,7 @@ export const productList = writable([
     name: "Шорти Стильні",
     price: "980",
     isHeart: false,
-    img: "person-slider.png",
+    img: "/person-slider.png",
     cart: false,
   },
   {
@@ -62,7 +62,7 @@ export const productList = writable([
     name: "Шарф крутий",
     price: "230",
     isHeart: false,
-    img: "person-slider2.png",
+    img: "/person-slider2.png",
     cart: false,
   },
 ]);

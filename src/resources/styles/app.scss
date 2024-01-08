@@ -22,9 +22,7 @@ nav-item > a {
   color: $text-color;
   transition: all 0.2s;
 }
-a:hover {
-  color: $focus-color;
-}
+
 ol,
 ul {
   padding: 0;
@@ -62,6 +60,7 @@ main {
 @import "../styles/page-parts/categories";
 @import "../styles/page-parts/likes";
 @import "../styles/page-parts/cart";
+@import "../styles/page-parts/single-item-page";
 
 // COMPONENTS / ELEMENTS
 
