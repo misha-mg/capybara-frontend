@@ -4,19 +4,49 @@
   import Popular from "../../../components/Popular.svelte";
   import Button from "../../../elements/Button.svelte";
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
+  import Swiper from "$lib/swiper";
+  import "swiper/css";
 
-  let id = $page.params.item;
-
+  let id = null;
   let item = {};
   $: {
+    console.log("update");
+    id = $page.params.item;
     item = $productList.filter((item) => item.id == id)[0];
   }
+  var swiper;
+  onMount(() => {
+    swiper = new Swiper(".mySwiper", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
 </script>
 
 <section id="item-page">
   <div class="container">
     <div class="item-page__images">
-      <img src={item?.img} alt="img" />
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <img src={item?.img} alt="img" class="swiper-slide" />
+          <img src={item?.img} alt="img" class="swiper-slide" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next">
+        <img src="/arrow.svg" alt="" />
+      </div>
+      <div class="swiper-button-prev">
+        <img src="/arrow.svg" alt="" />
+      </div>
     </div>
     <div class="item-page__info">
       <h4>{item?.name}</h4>
@@ -24,9 +54,9 @@
       <div class="item-page__size">
         <p>Оберіть розмір</p>
         <div>
-          <Button text="M" />
-          <Button text="L" />
-          <Button text="XL" />
+          {#each item.size as size}
+            <Button text={size} />
+          {/each}
         </div>
       </div>
       <div class="item-page__color">
@@ -56,15 +86,19 @@
       </div>
       <div class="item-page__facts">
         <div>
-          <h5>Little title</h5>
+          <h5>Склад</h5>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
-            sapiente.
+            Одежа вироблена з чистої бавовони, використовуютсья природні
+            фарбники та натуральні елементи
           </p>
         </div>
         <div>
-          <h5>Little title</h5>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          <h5>Доставка</h5>
+          <p>
+            Час очікування 14-25 днів через знаходження постачальника за
+            кордоном. Іноді стаються затримки через погіршення ситуації та
+            митниці
+          </p>
         </div>
       </div>
     </div>

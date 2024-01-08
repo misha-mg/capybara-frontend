@@ -423,11 +423,18 @@ section#cart .content {
 }
 section#item-page .container {
   display: flex;
-  justify-content: space-between;
+  gap: 3rem;
 }
 section#item-page .container .item-page__images {
   width: 35%;
   border-radius: 3px solid var(--focus-color);
+  position: relative;
+  height: -moz-min-content;
+  height: min-content;
+  margin: auto 4rem;
+}
+section#item-page .container .item-page__images .swiper-wrapper {
+  width: calc(100% - 5rem);
 }
 section#item-page .container .item-page__images img {
   width: 100%;
@@ -435,18 +442,74 @@ section#item-page .container .item-page__images img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+section#item-page .container .item-page__images .swiper-button-next,
+section#item-page .container .item-page__images .swiper-button-prev {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  border: solid 2px var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -3rem;
+  transition: all 0.2s;
+}
+section#item-page .container .item-page__images .swiper-button-next:hover,
+section#item-page .container .item-page__images .swiper-button-prev:hover {
+  background: #e78989;
+}
+section#item-page .container .item-page__images .swiper-button-next img,
+section#item-page .container .item-page__images .swiper-button-prev img {
+  width: 40%;
+  height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+section#item-page .container .item-page__images .swiper-button-next {
+  left: unset;
+  right: -3rem;
+}
+section#item-page .container .item-page__images .swiper-button-next img {
+  transform: rotate(-180deg);
+}
+section#item-page .container .item-page__images .swiper-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+section#item-page .container .item-page__images .swiper-pagination .swiper-pagination-bullet {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: solid 2px var(--text-color);
+  border-radius: 100%;
+  transition: background 0.2s;
+}
+section#item-page .container .item-page__images .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--focus-color);
+}
 section#item-page .container .item-page__info {
-  width: 55%;
+  width: 40%;
 }
 section#item-page .container .item-page__info h4 {
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 section#item-page .container .item-page__info .item-page__price {
   display: block;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  font-weight: 600;
 }
 section#item-page .container .item-page__info .item-page__color {
   margin-bottom: 1.5rem;
@@ -551,6 +614,10 @@ section#item-page .container .item-page__info .item-page__action .like.active sp
   background: url(/heart-active.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+section#item-page .container .item-page__info .item-page__facts {
+  width: 70%;
+  min-width: 250px;
 }
 section#item-page .container .item-page__info .item-page__facts > div h5 {
   font-size: 1.2rem;

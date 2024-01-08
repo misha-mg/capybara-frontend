@@ -2,25 +2,92 @@
 section#item-page {
   .container {
     display: flex;
-    justify-content: space-between;
+    
+    gap: 3rem;
 
     .item-page__images {
       width: 35%;
       border-radius: 3px solid $focus-color;
+      position: relative;
+      height: min-content;
+      margin: auto 4rem;
+
+    .swiper-wrapper {
+        width: calc(100% - 5rem)
+    }
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100%;
+        border: solid 2px $text-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        cursor: pointer;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -3rem;
+        transition: all .2s;
+
+        &:hover {
+           background: #e78989; 
+        }
+
+        img {
+          width: 40%;
+          height: 50%;
+          object-fit: contain;
+        }
+      }
+      .swiper-button-next {
+        left: unset;
+        right: -3rem;
+        img {
+            transform: rotate(-180deg);
+        }
+      }
+
+      .swiper-pagination{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+
+        .swiper-pagination-bullet{
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: solid 2px $text-color;
+            border-radius: 100%;
+            transition: background .2s;
+
+            &.swiper-pagination-bullet-active {
+                background: $focus-color;
+            }
+        }
+      }
     }
 
     .item-page__info {
-      width: 55%;
+      width: 40%;
 
       h4 {
         font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
       }
 
       .item-page__price {
@@ -28,6 +95,7 @@ section#item-page {
         font-size: 1.3rem;
         margin-bottom: 1.5rem;
         font-size: 1.5rem;
+        font-weight: 600;
       }
       .item-page__color {
         margin-bottom: 1.5rem;
@@ -86,16 +154,16 @@ section#item-page {
 
         .bag {
           @include cart-button;
-          
-            min-width: 13rem;
-        
-          
+
+          min-width: 13rem;
         }
         .like {
           @include like-button;
         }
       }
       .item-page__facts {
+        width: 70%;
+        min-width: 250px;
         > div {
           h5 {
             font-size: 1.2rem;
