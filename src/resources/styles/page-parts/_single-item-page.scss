@@ -40,7 +40,13 @@ section#item-page {
         left: -3rem;
         transition: all 0.2s;
 
-        &:hover {
+        @media (min-width: 540px) {
+          &:hover {
+            background: #e78989;
+          }
+        }
+
+        &:active {
           background: #e78989;
         }
 

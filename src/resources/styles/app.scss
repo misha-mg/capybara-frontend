@@ -10,6 +10,10 @@ body {
   transition: color, background 0.2s;
   font-family: $base-font;
 }
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
 p,
 h1,
 h2,
@@ -21,6 +25,12 @@ nav-item > a {
   text-decoration: none;
   color: $text-color;
   transition: all 0.2s;
+}
+
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+  text-decoration: none;
 }
 
 ol,
