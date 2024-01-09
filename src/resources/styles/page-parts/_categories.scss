@@ -22,3 +22,13 @@ section#categories {
     }
   }
 }
+
+@media (max-width: 520px) {
+  section#categories {
+    .heading {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

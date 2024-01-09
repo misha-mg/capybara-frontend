@@ -36,3 +36,13 @@ section#items {
     }
   }
 }
+
+@media (max-width: 520px) {
+  section#items {
+    .heading {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

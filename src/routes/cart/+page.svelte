@@ -8,11 +8,11 @@
   let crumbsData = [
     {
       path: "/",
-      name: "main",
+      name: "Головна",
     },
     {
       path: "",
-      name: "cart",
+      name: "Кошик",
     },
   ];
 </script>

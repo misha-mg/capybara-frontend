@@ -1,11 +1,11 @@
 section#breadcrumbs {
   margin-top: -3rem;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   .container {
     display: flex;
     gap: 0.75rem;
   }
-  a {
+  a, div {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -14,7 +14,7 @@ section#breadcrumbs {
     gap: 0.75rem;
     align-items: center;
 
-    &:hover {
+    a:hover {
       color: $focus-color;
     }
   }

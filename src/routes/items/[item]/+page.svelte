@@ -35,12 +35,12 @@
   $: (() => {
     crumbsData = [
       {
-        path: "/main",
-        name: "main",
+        path: "/",
+        name: "Головна",
       },
       {
         path: "/items",
-        name: "items",
+        name: "Товари",
       },
       {
         path: "",

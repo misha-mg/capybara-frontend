@@ -360,6 +360,11 @@ section#items .content a {
     margin-bottom: 2rem;
   }
 }
+@media (max-width: 520px) {
+  section#items .heading h1 {
+    font-size: 2rem;
+  }
+}
 section#categories {
   height: 20rem;
   display: flex;
@@ -374,6 +379,11 @@ section#categories .heading h1 {
 @media (max-width: 720px) {
   section#categories .heading h1 {
     font-size: 3rem;
+  }
+}
+@media (max-width: 520px) {
+  section#categories .heading h1 {
+    font-size: 2rem;
   }
 }
 section#likes .heading {
@@ -966,13 +976,13 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
 }
 section#breadcrumbs {
   margin-top: -3rem;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 section#breadcrumbs .container {
   display: flex;
   gap: 0.75rem;
 }
-section#breadcrumbs a {
+section#breadcrumbs a, section#breadcrumbs div {
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -980,7 +990,7 @@ section#breadcrumbs a {
   gap: 0.75rem;
   align-items: center;
 }
-section#breadcrumbs a:hover {
+section#breadcrumbs a a:hover, section#breadcrumbs div a:hover {
   color: var(--focus-color);
 }
 section#breadcrumbs span.arrow {

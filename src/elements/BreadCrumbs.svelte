@@ -10,10 +10,17 @@
 <section id="breadcrumbs">
   <div class="container">
     {#each crumbsData as item}
-      <a href={item.path}>
-        <span>{item.name}</span>
-        <span class:arrow={item.path}></span>
-      </a>
+      {#if item.path}
+        <a href={item.path}>
+          <span>{item.name}</span>
+          <span class:arrow={item.path}></span>
+        </a>
+      {:else}
+        <div>
+          <span>{item.name}</span>
+          <span class:arrow={item.path}></span>
+        </div>
+      {/if}
     {/each}
   </div>
 </section>

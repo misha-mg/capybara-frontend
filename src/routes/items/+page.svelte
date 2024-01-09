@@ -6,11 +6,11 @@
   let crumbsData = [
     {
       path: "/",
-      name: "main",
+      name: "Головна",
     },
     {
       path: "",
-      name: "items",
+      name: "Товари",
     },
   ];
 </script>

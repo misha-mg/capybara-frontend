@@ -14,11 +14,11 @@
   let crumbsData = [
     {
       path: "/",
-      name: "main",
+      name: "Головна",
     },
     {
       path: "",
-      name: "likes",
+      name: "Вподобайки",
     },
   ];
 </script>
