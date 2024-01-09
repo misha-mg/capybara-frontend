@@ -12,6 +12,15 @@
   --base-font: "Inter", sans-serif;
 }
 
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: var(--text-color2);
+  border: solid 2px var(--text-color);
+  border-radius: 50px;
+}
+
 body {
   margin: 0 auto;
   background-color: var(--backgrount-color);

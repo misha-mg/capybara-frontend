@@ -3,6 +3,19 @@
 
 @import "../styles/components/variables";
 
+
+html {
+  ::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: $text-color2; 
+    border: solid 2px $text-color;
+    border-radius: 50px; 
+  }
+}
+
 body {
   margin: 0 auto;
   background-color: $backgrount-color;
