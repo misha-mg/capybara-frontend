@@ -7,6 +7,7 @@
   import { onMount } from "svelte";
   import Swiper from "$lib/swiper";
   import "swiper/css";
+  import BreadCrumbs from "../../../elements/BreadCrumbs.svelte";
 
   let id = null;
   let item = {};
@@ -29,7 +30,27 @@
       },
     });
   });
+
+  let crumbsData = [];
+  $: (() => {
+    crumbsData = [
+      {
+        path: "/main",
+        name: "main",
+      },
+      {
+        path: "/items",
+        name: "items",
+      },
+      {
+        path: "",
+        name: item?.name,
+      },
+    ];
+  })();
 </script>
+
+<BreadCrumbs {crumbsData} />
 
 <section id="item-page">
   <div class="container">

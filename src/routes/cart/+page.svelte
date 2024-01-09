@@ -1,16 +1,23 @@
 <script>
   import { productList } from "$lib/store.js";
+  import BreadCrumbs from "../../elements/BreadCrumbs.svelte";
   import SingleItem from "../../elements/SingleItem.svelte";
 
-  // let lickedLength = 0;
-  // productList.subscribe((value) => {
-  //   lickedLength = 0;
-  //   value.forEach((item) => (item.isHeart ? (lickedLength += 1) : ""));
-  // });
-
   $: console.log($productList);
+
+  let crumbsData = [
+    {
+      path: "/",
+      name: "main",
+    },
+    {
+      path: "",
+      name: "cart",
+    },
+  ];
 </script>
 
+<BreadCrumbs {crumbsData} />
 <section id="cart">
   <div class="container">
     <div class="heading">

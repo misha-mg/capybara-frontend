@@ -1,5 +1,6 @@
 <script>
   import { productList } from "$lib/store.js";
+  import BreadCrumbs from "../../elements/BreadCrumbs.svelte";
   import SingleItem from "../../elements/SingleItem.svelte";
 
   let lickedLength = 0;
@@ -9,8 +10,20 @@
   });
 
   $: console.log(lickedLength);
+
+  let crumbsData = [
+    {
+      path: "/",
+      name: "main",
+    },
+    {
+      path: "",
+      name: "likes",
+    },
+  ];
 </script>
 
+<BreadCrumbs {crumbsData} />
 <section id="likes">
   <div class="container">
     <div class="heading">
