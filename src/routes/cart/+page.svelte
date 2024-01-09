@@ -1,9 +1,9 @@
 <script>
-  import { productList } from "$lib/store.js";
+  import { cart } from "$lib/store.js";
   import BreadCrumbs from "../../elements/BreadCrumbs.svelte";
   import SingleItem from "../../elements/SingleItem.svelte";
 
-  $: console.log($productList);
+  $: console.log($cart);
 
   let crumbsData = [
     {
@@ -24,10 +24,8 @@
       <h1>КАРТ</h1>
     </div>
     <div class="content">
-      {#each $productList as item, i}
-        {#if item.cart}
-          <SingleItem {...item} />
-        {/if}
+      {#each $cart as item, i}
+        <SingleItem {...item} id={item._id} {item} />
       {/each}
     </div>
   </div>

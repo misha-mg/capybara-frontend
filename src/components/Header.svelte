@@ -1,20 +1,7 @@
 <script>
   import { page } from "$app/stores";
-  import { productList } from "$lib/store.js";
+  import { cart, liked } from "$lib/store.js";
   $: currentRoute = $page.url;
-
-  let counter = {
-    likes: 0,
-    cart: 0,
-  };
-
-  productList.subscribe((value) => {
-    counter = { likes: 0, cart: 0 };
-    value.forEach((item) => {
-      item.isHeart ? (counter.likes += 1) : null;
-      item.cart ? (counter.cart += 1) : null;
-    });
-  });
 </script>
 
 <section id="header">
@@ -49,16 +36,16 @@
       <div class="header__likes">
         <a href="/likes" class:active={currentRoute.pathname == "/likes"}>
           ВПОДОБАЙКИ
-          {#if counter.likes > 0}
-            <span>{counter.likes}</span>
+          {#if $liked.length > 0}
+            <span>{$liked.length}</span>
           {/if}
         </a>
       </div>
       <div class="header__bag">
         <a href="/cart" class:active={currentRoute.pathname == "/cart"}>
           КОШИК
-          {#if counter.cart > 0}
-            <span>{counter.cart}</span>
+          {#if $cart.length > 0}
+            <span>{$cart.length}</span>
           {/if}
         </a>
       </div>

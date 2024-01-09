@@ -3,20 +3,30 @@
   export let name = "";
   export let price = "";
   export let isHeart = false;
-  export let img = "";
+  export let images = "";
   export let id = "";
-  export let cart = "";
-  import { productList } from "$lib/store.js";
+  export let item = {};
+  import { cart, liked } from "$lib/store.js";
   import { fly } from "svelte/transition";
-  import { toggleCart, toggleHeart } from "$lib/utils";
-  import Popular from "../components/Popular.svelte";
+  import { toggleStore } from "$lib/utils";
+  // import { toggleCart, toggleHeart } from "$lib/utils";
+
+  let cartAction = "add";
+  let likedAction = "add";
+
+  $: cartAction = $cart.filter((item) => item._id == id).length
+    ? "remove"
+    : "add";
+  $: likedAction = $liked.filter((item) => item._id == id).length
+    ? "remove"
+    : "add";
 </script>
 
 <div class="item-wrapper" id="single-item" transition:fly>
   <a href="/items/{id}">
     <div class="item" class:cart>
       <div class="item__image">
-        <img src={img} alt="" />
+        <img src={images[0]} alt="" />
       </div>
       <div class="item__info">
         <span class="name">{name}</span>
@@ -24,12 +34,12 @@
       </div>
       <div class="item__action">
         <Button
-          customClass="bag {cart ? 'cart' : ''}"
-          customFunction={() => toggleCart(id, productList)}
+          customClass="bag {cartAction == 'remove' ? 'cart' : ''}"
+          customFunction={() => toggleStore(item, cart, cartAction)}
         />
         <Button
-          customClass="like {isHeart ? 'active' : ''}"
-          customFunction={() => toggleHeart(id, productList)}
+          customClass="like {likedAction == 'remove' ? 'active' : ''}"
+          customFunction={() => toggleStore(item, liked, likedAction)}
         ></Button>
       </div>
     </div>
