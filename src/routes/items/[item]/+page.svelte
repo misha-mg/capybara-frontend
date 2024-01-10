@@ -14,12 +14,24 @@
   var swiper;
   let loading = true;
   let item = {};
+
   onMount(async () => {
     item = await getOneProduct(itemId);
     loading = false;
     loading = loading;
   });
 
+  $: {
+    if (itemId !== $page.params.item) {
+      itemId = $page.params.item;
+      loading = true;
+      (async () => {
+        item = await getOneProduct(itemId);
+        loading = false;
+        loading = loading;
+      })();
+    }
+  }
   afterUpdate(() => {
     swiper = new Swiper(".mySwiper", {
       loop: true,
