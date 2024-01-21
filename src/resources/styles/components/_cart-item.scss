@@ -1,0 +1,143 @@
+@import '../mixins/button-mixins';
+section#cart-item {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  padding: 0.7rem;
+
+  border: solid 2px $text-color;
+  border-radius: 5px;
+
+  background: #e2bf9761;
+
+  > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-item__main-info {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+
+    width: 40%;
+    .cart-item__img {
+      width: 180px;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .cart-item__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h4 {
+        margin-bottom: 0.3rem;
+      }
+      h4,
+      .price {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .addition {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        .color,
+        .size {
+          display: flex;
+
+          .title {
+            min-width: 4.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .cart-item__count {
+    width: 25%;
+    display: flex;
+    gap: 1rem;
+
+    .plus,
+    .minus {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        // top: 50%;
+        // transform: translateY(-50%);
+        height: 3px;
+        width: 20px;
+        border-radius: 5px;
+        background-color: $text-color;
+        transition: all 0.2s;
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $focus-color;
+        }
+      }
+    }
+
+    .plus {
+      &::after {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      &::before {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+    .minus {
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &::after {
+        display: none;
+      }
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+  .cart-item__total {
+    width: 25%;
+    span {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+  .cart-item__remove {
+    width: 10%;
+
+    span {
+     @include close-button
+    }
+  }
+}

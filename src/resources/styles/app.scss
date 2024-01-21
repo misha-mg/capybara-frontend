@@ -29,7 +29,10 @@ body {
 p,
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 a,
@@ -90,3 +93,4 @@ main {
 @import "../styles/components/spinner";
 @import "../styles/components/item-card";
 @import "../styles/components/breadcrumbs";
+@import "../styles/components/cart-item";

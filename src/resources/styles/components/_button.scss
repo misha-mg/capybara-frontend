@@ -18,6 +18,16 @@
   top: 0;
   box-shadow: 0 5px 0 $text-color;
 
+  &.active {
+    border: solid 1px $focus-color;
+    box-shadow: 0 5px 0 $focus-color;
+    &:hover {
+      box-shadow: 0 3px 0 $focus-color;
+    }
+    &:active {
+      box-shadow: 0 1px 0 $focus-color;
+    }
+  }
 
   @media (min-width: 520px) {
     &:hover {

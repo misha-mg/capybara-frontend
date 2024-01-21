@@ -27,16 +27,14 @@ export function toggleStore(item, store, action) {
       store.update((arr) => {
         return [...arr, item];
       });
-      console.log("item", item.name, "added");
       break;
     case "remove":
       store.update((arr) => {
         return arr.filter((prod) => prod._id !== item._id);
       });
-      console.log("item", item.name, "removed");
       break;
     default:
-      console.log(action);
+      console.log(action, "no defined");
       break;
   }
 }

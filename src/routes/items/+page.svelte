@@ -1,6 +1,6 @@
 <script>
   import SingleItem from "../../elements/SingleItem.svelte";
-  import { productList } from "$lib/store.js";
+  import { products } from "$lib/store.js";
   import BreadCrumbs from "../../elements/BreadCrumbs.svelte";
   import { getAllProducts } from "$lib/utils";
   import { onMount } from "svelte";
@@ -17,11 +17,19 @@
     },
   ];
 
-  let loading = true;
-  let items = {};
+  let loading = false;
+
   onMount(async () => {
-    items = await getAllProducts();
-    loading = false;
+    if ($products.length === 0) {
+      loading = true;
+      let items = await getAllProducts();
+      products.update((arr) => {
+        return [...arr, ...items];
+      });
+      loading = false;
+    } else {
+      loading = false;
+    }
   });
 </script>
 
@@ -36,7 +44,7 @@
       <Spinner />
     {:else}
       <div class="content">
-        {#each items as item}
+        {#each $products as item}
           <SingleItem {...item} id={item._id} {item} />
         {/each}
       </div>

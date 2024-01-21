@@ -6,6 +6,31 @@ section#cart {
       font-family: $focus-font;
       text-align: center;
       margin: 0;
+
+      span {
+        font-family: $focus-font;
+      }
+    }
+  }
+  .content-heading {
+    display: flex;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    .product {
+      width: 40%;
+    }
+    .quantity {
+      width: 25%;
+      text-align: center;
+    }
+    .total {
+      width: 25%;
+      text-align: center;
+    }
+    .remove-place {
+      width: 10%;
+      
     }
   }
   .content {

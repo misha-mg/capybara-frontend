@@ -1,60 +1,84 @@
 @mixin cart-button {
-  
+  span::before {
+    content: "ДО КОШИКА";
+  }
+
+  &.cart {
+    border: solid 1px $focus-color;
+    box-shadow: 0 5px 0 $focus-color;
+
     span::before {
-      content: "ДО КОШИКА";
+      content: "ПРИБРАТИ";
     }
-
-    &.cart {
-      border: solid 1px $focus-color;
-      box-shadow: 0 5px 0 $focus-color;
-
-      span::before {
-        content: "ПРИБРАТИ";
-      }
-      &:hover {
-        box-shadow: 0 3px 0 $focus-color;
-      }
-      &:active {
-        box-shadow: 0 1px 0 $focus-color;
-      }
+    &:hover {
+      box-shadow: 0 3px 0 $focus-color;
     }
-  
+    &:active {
+      box-shadow: 0 1px 0 $focus-color;
+    }
+  }
 }
 
 @mixin like-button {
-  
-    width: min-content;
+  width: min-content;
 
+  span {
+    display: block;
+    width: 20px;
+    height: 18px;
+    min-width: 20px;
+    background: url(/heart.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  @media (min-width: 520px) {
+    &:hover span {
+      opacity: 0.7;
+    }
+  }
+  &.active {
+    box-shadow: 0 5px 0 $focus-color;
+    border: solid 1px $focus-color;
+
+    &:hover {
+      box-shadow: 0 3px 0 $focus-color;
+    }
+    &:active {
+      box-shadow: 0 1px 0 $focus-color;
+    }
     span {
-      display: block;
-      width: 20px;
-      height: 18px;
-      min-width: 20px;
-      background: url(/heart.png);
+      background: url(/heart-active.png);
       background-size: contain;
       background-repeat: no-repeat;
-      transition: all 0.2s;
     }
-    @media (min-width: 520px) {
-      &:hover span {
-        opacity: 0.7;
-      }
-    }
-    &.active {
-      box-shadow: 0 5px 0 $focus-color;
-      border: solid 1px $focus-color;
+  }
+}
 
-      &:hover {
-        box-shadow: 0 3px 0 $focus-color;
-      }
-      &:active {
-        box-shadow: 0 1px 0 $focus-color;
-      }
-      span {
-        background: url(/heart-active.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+@mixin close-button {
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 15px;
+    border-radius: 5px;
+    background-color: $text-color;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: $focus-color;
     }
- 
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
 }

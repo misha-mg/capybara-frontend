@@ -1,6 +1,6 @@
 <script>
-  import Hero from "../components/Hero.svelte";
-  import Popular from "../components/Popular.svelte";
+  import Hero from "../components/page-parts/Hero.svelte";
+  import Popular from "../components/page-parts/Popular.svelte";
   import BreadCrumbs from "../elements/BreadCrumbs.svelte";
 </script>
 

@@ -20,6 +20,29 @@
   $: likedAction = $liked.filter((item) => item._id == id).length
     ? "remove"
     : "add";
+
+  function toggleSizet(size) {
+    item.activeSize = size;
+  }
+  function addToCart() {
+    toggleStore(item, cart, cartAction);
+    sizeSelect = false;
+  }
+  function bagButton() {
+    if (cartAction == "add") {
+      sizeSelect = true;
+    } else if (cartAction == "remove") {
+      toggleStore(item, cart, cartAction);
+      item.activeSize = null;
+    }
+  }
+
+  let sizeSelect = false;
+
+  function closeSizeSelect() {
+    sizeSelect = false;
+    item.activeSize = null;
+  }
 </script>
 
 <div class="item-wrapper" id="single-item" transition:fly>
@@ -35,7 +58,7 @@
       <div class="item__action">
         <Button
           customClass="bag {cartAction == 'remove' ? 'cart' : ''}"
-          customFunction={() => toggleStore(item, cart, cartAction)}
+          customFunction={bagButton}
         />
         <Button
           customClass="like {likedAction == 'remove' ? 'active' : ''}"
@@ -44,4 +67,24 @@
       </div>
     </div>
   </a>
+
+  <div class="select-wrapper" class:show={sizeSelect}>
+    <span class="close" on:click={closeSizeSelect}></span>
+    <p class="title">Оберіть розмір</p>
+
+    <div class="sizes">
+      {#each item?.size as size}
+        <Button
+          text={size}
+          customFunction={() => toggleSizet(size)}
+          customClass={item?.activeSize == size ? "active" : ""}
+        />
+      {/each}
+    </div>
+    <Button
+      customClass="bag {cartAction == 'remove' ? 'cart' : ''}"
+      customFunction={addToCart}
+      text="ДОДАТИ"
+    ></Button>
+  </div>
 </div>

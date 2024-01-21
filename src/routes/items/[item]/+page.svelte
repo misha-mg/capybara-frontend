@@ -3,35 +3,26 @@
   import { getOneProduct, toggleStore } from "$lib/utils";
   import { afterUpdate, onMount } from "svelte";
   import "swiper/css";
-  import Popular from "../../../components/Popular.svelte";
+  import Popular from "../../../components/page-parts/Popular.svelte";
   import BreadCrumbs from "../../../elements/BreadCrumbs.svelte";
   import Button from "../../../elements/Button.svelte";
   import Spinner from "../../../elements/Spinner.svelte";
-  import { cart, liked } from "$lib/store";
+  import { cart, liked, products } from "$lib/store";
   import { page } from "$app/stores";
 
   let itemId = $page.params.item;
-  var swiper;
   let loading = true;
   let item = {};
+  var swiper;
+  let sliderInit = false;
 
-  onMount(async () => {
-    item = await getOneProduct(itemId);
+  $: (async () => {
+    loading = true;
+    item = await getOneProduct($page.params.item);
     loading = false;
-    loading = loading;
-  });
+    activeSizeButtonClass();
+  })();
 
-  $: {
-    if (itemId !== $page.params.item) {
-      itemId = $page.params.item;
-      loading = true;
-      (async () => {
-        item = await getOneProduct(itemId);
-        loading = false;
-        loading = loading;
-      })();
-    }
-  }
   afterUpdate(() => {
     swiper = new Swiper(".mySwiper", {
       loop: true,
@@ -44,6 +35,7 @@
         clickable: true,
       },
     });
+    sliderInit = true;
   });
 
   let cartAction = "add";
@@ -73,9 +65,23 @@
       },
     ];
   })();
+
+  function sizeSelect(size) {
+    item.activeSize = size;
+  }
+
+  function activeSizeButtonClass(size) {
+    if ($cart.filter((item) => item._id == itemId)?.[0]?.activeSize) {
+      item.activeSize = $cart.filter(
+        (item) => item._id == itemId
+      )?.[0]?.activeSize;
+    }
+    console.log(item?.activeSize == "XL" ? "active" : "");
+  }
 </script>
 
 <BreadCrumbs {crumbsData} />
+
 <section id="item-page">
   <div class="container">
     {#if loading}
@@ -105,7 +111,11 @@
           <p>Оберіть розмір</p>
           <div>
             {#each item?.size as size}
-              <Button text={size} />
+              <Button
+                text={size}
+                customFunction={() => sizeSelect(size)}
+                customClass={item?.activeSize == size ? "active" : ""}
+              />
             {/each}
           </div>
         </div>
@@ -121,26 +131,15 @@
         <div class="item-page__action">
           <Button
             customClass="bag {cartAction == 'remove' ? 'cart' : ''}"
-            customFunction={() => toggleStore(item, cart, cartAction)}
+            customFunction={() => {
+              cartAction == "remove" ? (item.activeSize = null) : "";
+              toggleStore(item, cart, cartAction);
+            }}
           />
           <Button
             customClass="like {likedAction == 'remove' ? 'active' : ''}"
             customFunction={() => toggleStore(item, liked, likedAction)}
           ></Button>
-          <!-- <Button
-          customClass="bag {item?.cart ? 'cart' : ''}"
-          customFunction={() => toggleCart(item?.id, productList)}
-        />
-        <Button
-          customClass="like {item?.isHeart ? 'active' : ''}"
-          customFunction={() => toggleHeart(item?.id, productList)}
-        >
-          {#if item?.cart}
-            ПРИБРАТИ
-          {:else}
-            <span></span>
-          {/if}
-        </Button> -->
         </div>
         <div class="item-page__facts">
           <div>
@@ -165,3 +164,8 @@
 </section>
 
 <Popular />
+
+<!-- customClass={$cart.filter((item) => item._id == itemId)?.[0]
+                  ?.activeSize == size
+                  ? "active"
+                  : ""} -->
