@@ -1,5 +1,5 @@
 <script>
-  import { cart } from "$lib/store";
+  import { cart, products } from "$lib/store";
   import { fly } from "svelte/transition";
   export let images = "";
   export let name = "";
@@ -12,6 +12,12 @@
   function handleRemove() {
     cart.update((arr) => {
       return arr.filter((item) => item._id !== id);
+    });
+
+    products.update((arr) => {
+      return arr.filter((item) => {
+        item._id == id ? (item.activeSize = null) : null;
+      });
     });
   }
   let count = 1;

@@ -78,11 +78,11 @@
     gap: 2rem;
     opacity: 0;
     pointer-events: none;
-    transition: all .2s;
+    transition: all 0.2s;
 
     &.show {
       opacity: 1;
-    pointer-events: all;
+      pointer-events: all;
     }
 
     .close {
@@ -95,7 +95,6 @@
       &::after {
         background: $text-color2;
         width: 25px;
-        
       }
     }
 
@@ -115,16 +114,23 @@
     }
 
     .size-warning {
-      display: flex;
-      justify-content: center;
+      width: 100%;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 0.8rem;
+      margin: -0.7rem 0;
       color: $focus-color;
       font-weight: 700;
       font-size: 1.1rem;
       text-transform: uppercase;
-      display: none;
+      opacity: 0;
+      transition: .2s;
 
       &.active {
-        display: flex;
+        opacity: 1;
       }
     }
   }
@@ -177,6 +183,32 @@
             content: "КОШИК";
           }
         }
+      }
+    }
+    .select-wrapper {
+      .title {
+        font-size: 1rem;
+      }
+      .sizes {
+        button {
+          font-size: 0.8rem;
+        }
+      }
+      .close {
+        &::before,
+        &::after {
+          width: 20px;
+        }
+      }
+      .size-warning {
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        font-size: 0.8rem;
+        margin: -0.7rem 0;
       }
     }
   }

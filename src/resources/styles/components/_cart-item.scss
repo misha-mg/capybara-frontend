@@ -1,4 +1,4 @@
-@import '../mixins/button-mixins';
+@import "../mixins/button-mixins";
 section#cart-item {
   display: flex;
   width: 100%;
@@ -24,6 +24,7 @@ section#cart-item {
     width: 40%;
     .cart-item__img {
       width: 180px;
+      min-width: 180px;
       height: 100%;
 
       img {
@@ -137,7 +138,58 @@ section#cart-item {
     width: 10%;
 
     span {
-     @include close-button
+      @include close-button;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .cart-item__main-info {
+      width: 60%;
+    }
+    .cart-item__total {
+      display: none;
+    }
+
+    .cart-item__count {
+      width: 30%;
+    }
+
+    .cart-item__remove {
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 520px) {
+    flex-wrap: wrap;
+    position: relative;
+    .cart-item__main-info {
+      width: 90%;
+
+      .cart-item__img {
+        width: 130px;
+        min-width: 130px;
+      }
+    }
+
+    .cart-item__count {
+      margin-top: 0.3rem;
+      width: 130px;
+
+      .plus,
+      .minus {
+        width: 15px;
+        height: 15px;
+        &::before,
+        &::after {
+          width: 15px;
+        }
+      }
+    }
+
+    .cart-item__remove {
+      position: absolute;
+      top: 1.5rem;
+      right: 0.5rem;
     }
   }
 }

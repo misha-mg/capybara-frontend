@@ -4,8 +4,6 @@
   import SingleCartItem from "../../elements/SingleCartItem.svelte";
   import SingleItem from "../../elements/SingleItem.svelte";
 
-  $: console.log($cart);
-
   let crumbsData = [
     {
       path: "/",

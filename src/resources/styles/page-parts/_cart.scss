@@ -47,6 +47,17 @@ section#cart {
         font-size: 3rem;
       }
     }
+    .content-heading {
+      .product {
+        width: 60%;
+      }
+      .total {
+        display: none;
+      }
+      .quantity {
+        width: 30%;
+      }
+    }
     .content {
       gap: 1rem;
     }
@@ -58,6 +69,17 @@ section#cart {
     .heading {
       h1 {
         font-size: 2rem;
+      }
+    }
+    .content-heading {
+      .product {
+        width: 100%;
+      }
+      .total {
+        display: none;
+      }
+      .quantity {
+        display: none;
       }
     }
   }

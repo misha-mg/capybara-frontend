@@ -470,6 +470,15 @@ section#cart .content {
   section#cart .heading h1 {
     font-size: 3rem;
   }
+  section#cart .content-heading .product {
+    width: 60%;
+  }
+  section#cart .content-heading .total {
+    display: none;
+  }
+  section#cart .content-heading .quantity {
+    width: 30%;
+  }
   section#cart .content {
     gap: 1rem;
   }
@@ -477,6 +486,15 @@ section#cart .content {
 @media (max-width: 520px) {
   section#cart .heading h1 {
     font-size: 2rem;
+  }
+  section#cart .content-heading .product {
+    width: 100%;
+  }
+  section#cart .content-heading .total {
+    display: none;
+  }
+  section#cart .content-heading .quantity {
+    display: none;
   }
 }
 section#item-page .container {
@@ -683,18 +701,11 @@ section#item-page .container .item-page__info .item-page__action .like.active sp
 }
 section#item-page .container .item-page__info .item-page__action .size-warning {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 13rem;
-  height: 100%;
+  bottom: calc(100% + 0.05rem);
   color: var(--focus-color);
-  background-color: rgba(77, 77, 77, 0.9176470588);
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  border-radius: 5px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s;
@@ -1063,16 +1074,23 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
   flex-wrap: wrap;
 }
 #single-item .select-wrapper .size-warning {
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.8rem;
+  margin: -0.7rem 0;
   color: var(--focus-color);
   font-weight: 700;
   font-size: 1.1rem;
   text-transform: uppercase;
-  display: none;
+  opacity: 0;
+  transition: 0.2s;
 }
 #single-item .select-wrapper .size-warning.active {
-  display: flex;
+  opacity: 1;
 }
 
 @media (max-width: 1050px) {
@@ -1116,6 +1134,24 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
   }
   #single-item .item .item__action .bag span::before {
     content: "КОШИК";
+  }
+  #single-item .select-wrapper .title {
+    font-size: 1rem;
+  }
+  #single-item .select-wrapper .sizes button {
+    font-size: 0.8rem;
+  }
+  #single-item .select-wrapper .close::before, #single-item .select-wrapper .close::after {
+    width: 20px;
+  }
+  #single-item .select-wrapper .size-warning {
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    margin: -0.7rem 0;
   }
 }
 @media (max-width: 410px) {
@@ -1191,6 +1227,7 @@ section#cart-item .cart-item__main-info {
 }
 section#cart-item .cart-item__main-info .cart-item__img {
   width: 180px;
+  min-width: 180px;
   height: 100%;
 }
 section#cart-item .cart-item__main-info .cart-item__img img {
@@ -1307,4 +1344,50 @@ section#cart-item .cart-item__remove span::before {
 }
 section#cart-item .cart-item__remove span::after {
   transform: rotate(-45deg);
+}
+@media (max-width: 720px) {
+  section#cart-item .cart-item__main-info {
+    width: 60%;
+  }
+  section#cart-item .cart-item__total {
+    display: none;
+  }
+  section#cart-item .cart-item__count {
+    width: 30%;
+  }
+  section#cart-item .cart-item__remove {
+    margin-left: auto;
+  }
+}
+@media (max-width: 520px) {
+  section#cart-item {
+    flex-wrap: wrap;
+    position: relative;
+  }
+  section#cart-item .cart-item__main-info {
+    width: 90%;
+  }
+  section#cart-item .cart-item__main-info .cart-item__img {
+    width: 130px;
+    min-width: 130px;
+  }
+  section#cart-item .cart-item__count {
+    margin-top: 0.3rem;
+    width: 130px;
+  }
+  section#cart-item .cart-item__count .plus,
+  section#cart-item .cart-item__count .minus {
+    width: 15px;
+    height: 15px;
+  }
+  section#cart-item .cart-item__count .plus::before, section#cart-item .cart-item__count .plus::after,
+  section#cart-item .cart-item__count .minus::before,
+  section#cart-item .cart-item__count .minus::after {
+    width: 15px;
+  }
+  section#cart-item .cart-item__remove {
+    position: absolute;
+    top: 1.5rem;
+    right: 0.5rem;
+  }
 }/*# sourceMappingURL=app.css.map */

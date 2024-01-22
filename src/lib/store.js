@@ -1,7 +1,22 @@
 import { writable } from "svelte/store";
 
 export const products = writable([]);
-export const cart = writable([]);
+export const cart = writable([
+  {
+    colors: [],
+    availability: true,
+    _id: "659702e736128c97a15acd20",
+    name: "Butterfly Ribs",
+    size: ["M", "L", "XL", "XXL"],
+    images: [
+      "https://github.com/misha-mg/capybara-images/blob/main/ribs.png?raw=true",
+    ],
+    price: 1199,
+    category: "t_shirt",
+    __v: 0,
+    activeSize: "XL",
+  },
+]);
 export const liked = writable([]);
 
 export const productList = writable([

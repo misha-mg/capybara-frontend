@@ -9,6 +9,7 @@
   import { cart, liked } from "$lib/store.js";
   import { fly } from "svelte/transition";
   import { toggleStore } from "$lib/utils";
+  import { onMount } from "svelte";
   // import { toggleCart, toggleHeart } from "$lib/utils";
 
   let cartAction = "add";
@@ -90,12 +91,11 @@
         />
       {/each}
     </div>
+    <div class="size-warning" class:active={noSize}>розмір не обраний</div>
     <Button
       customClass="bag {cartAction == 'remove' ? 'cart' : ''}"
       customFunction={addToCart}
       text="ДОДАТИ"
     ></Button>
-
-    <div class="size-warning" class:active={noSize}>розмір не обраний</div>
   </div>
 </div>
