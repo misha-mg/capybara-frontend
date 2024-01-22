@@ -78,6 +78,21 @@
     }
     console.log(item?.activeSize == "XL" ? "active" : "");
   }
+
+  let sizeWarning = false;
+
+  function addToCart() {
+    if (item.activeSize == null) {
+      sizeWarning = true;
+      setTimeout(() => {
+        sizeWarning = false;
+      }, 1000);
+    } else {
+      cartAction == "remove" ? (item.activeSize = null) : "";
+      toggleStore(item, cart, cartAction);
+      sizeWarning = false;
+    }
+  }
 </script>
 
 <BreadCrumbs {crumbsData} />
@@ -131,16 +146,17 @@
         <div class="item-page__action">
           <Button
             customClass="bag {cartAction == 'remove' ? 'cart' : ''}"
-            customFunction={() => {
-              cartAction == "remove" ? (item.activeSize = null) : "";
-              toggleStore(item, cart, cartAction);
-            }}
+            customFunction={() => addToCart()}
           />
           <Button
             customClass="like {likedAction == 'remove' ? 'active' : ''}"
             customFunction={() => toggleStore(item, liked, likedAction)}
           ></Button>
+          <div class="size-warning" class:active={sizeWarning}>
+            розмір не обраний
+          </div>
         </div>
+
         <div class="item-page__facts">
           <div>
             <h5>Склад</h5>

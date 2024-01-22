@@ -158,6 +158,7 @@ section#item-page {
         margin-bottom: 1.5rem;
         display: flex;
         gap: 1rem;
+        position: relative;
 
         .bag {
           @include cart-button;
@@ -167,7 +168,31 @@ section#item-page {
         .like {
           @include like-button;
         }
+
+        .size-warning {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 13rem;
+          height: 100%;
+          color: $focus-color;
+          background-color: #4d4d4dea;
+          font-weight: 700;
+          font-size: 1rem;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+          border-radius: 5px;
+          opacity: 0;
+          pointer-events: none;
+          transition: all .2s;
+
+          &.active {
+            opacity: 1;
+          }
+        }
       }
+
       .item-page__facts {
         width: 70%;
         min-width: 250px;

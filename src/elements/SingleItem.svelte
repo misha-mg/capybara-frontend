@@ -24,9 +24,16 @@
   function toggleSizet(size) {
     item.activeSize = size;
   }
+
+  let noSize = false;
+
   function addToCart() {
-    toggleStore(item, cart, cartAction);
-    sizeSelect = false;
+    if (item.activeSize) {
+      toggleStore(item, cart, cartAction);
+      sizeSelect = false;
+    } else {
+      noSize = true;
+    }
   }
   function bagButton() {
     if (cartAction == "add") {
@@ -34,6 +41,7 @@
     } else if (cartAction == "remove") {
       toggleStore(item, cart, cartAction);
       item.activeSize = null;
+      noSize = false;
     }
   }
 
@@ -42,6 +50,7 @@
   function closeSizeSelect() {
     sizeSelect = false;
     item.activeSize = null;
+    noSize = false;
   }
 </script>
 
@@ -86,5 +95,7 @@
       customFunction={addToCart}
       text="ДОДАТИ"
     ></Button>
+
+    <div class="size-warning" class:active={noSize}>розмір не обраний</div>
   </div>
 </div>

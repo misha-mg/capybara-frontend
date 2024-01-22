@@ -626,6 +626,7 @@ section#item-page .container .item-page__info .item-page__action {
   margin-bottom: 1.5rem;
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 section#item-page .container .item-page__info .item-page__action .bag {
   min-width: 13rem;
@@ -679,6 +680,27 @@ section#item-page .container .item-page__info .item-page__action .like.active sp
   background: url(/heart-active.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+section#item-page .container .item-page__info .item-page__action .size-warning {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  height: 100%;
+  color: var(--focus-color);
+  background-color: rgba(77, 77, 77, 0.9176470588);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+section#item-page .container .item-page__info .item-page__action .size-warning.active {
+  opacity: 1;
 }
 section#item-page .container .item-page__info .item-page__facts {
   width: 70%;
@@ -1039,6 +1061,18 @@ section#item-page .container .item-page__info .item-page__facts > div h5 {
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+#single-item .select-wrapper .size-warning {
+  display: flex;
+  justify-content: center;
+  color: var(--focus-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  display: none;
+}
+#single-item .select-wrapper .size-warning.active {
+  display: flex;
 }
 
 @media (max-width: 1050px) {

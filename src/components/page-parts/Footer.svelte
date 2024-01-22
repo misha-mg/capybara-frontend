@@ -10,10 +10,7 @@
           знає...
         </p>
       </div>
-      <a
-        href="https://www.instagram.com/capybara.ua?igsh=bWJsams0ZWZvczhs"
-        class="media"
-      >
+      <a href="#" class="media">
         <span>inst: CAPYBARA.UA</span>
         <span>inst: CAPYBARA.UA</span>
         <span>inst: CAPYBARA.UA</span>
